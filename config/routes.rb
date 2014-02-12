@@ -1,5 +1,6 @@
 ImagesTest::Application.routes.draw do
 
+
   devise_for :users
 
   match '/auth/:provider/callback' => 'authorizations#create'
@@ -7,6 +8,8 @@ ImagesTest::Application.routes.draw do
   match '/auth/failure' => 'authorizations#auth_failure'
 
   resources :users
+
+  root to: 'users#index'
 
 
   # The priority is based upon order of creation:

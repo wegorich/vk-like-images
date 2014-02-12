@@ -1,0 +1,25 @@
+- sended ||= false
+.auth
+  .block
+    = simple_form_for(reg_resource, as: reg_resource_name, url: password_path(reg_resource_name), html: { method: :post }) do |f|
+      = f.error_notification
+      %h2
+        Востановить пароль
+        - unless sended
+          = link_to 'Я все помню!', new_user_session_path, class: 'fancybox-modal r', data:{type: 'js'}
+      - unless sended
+        %p
+          Укажите e-mail введенный при регистрации
+
+        .input.attach-group
+          = f.input :email, required: true, label: false, placeholder: 'регистрационный e-mail'
+          = f.submit 'Востановить', class: 'btn btn-green'
+      - else
+        %p
+          На ваш
+          %b #{reg_resource.email}
+          был выслан новый пароль. Сменить его вы можете в настройках профиля.
+        .input
+          = link_to new_user_session_path do
+            %i.icon-angle-double-left
+            Назад к странице входа

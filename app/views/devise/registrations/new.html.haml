@@ -1,0 +1,15 @@
+= content_for :normal_form do
+  = render partial: 'devise/registrations/new'
+
+- unless request.xhr?
+  - content_for :auth do
+    = content_for :normal_form
+
+  = render partial: 'devise/shared/full_registration_layout'
+
+- else
+  - if session[:omniauth_token]
+    = content_for :normal_form
+
+  :javascript
+    $('.simple_form.new_user').enableClientSideValidations();

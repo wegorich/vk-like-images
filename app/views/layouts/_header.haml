@@ -1,8 +1,7 @@
 %header.page
   .wrapper
-    %section.logo.dropdown
-      = link_to 'Vk-images', root_path, class:'dropdown-toggle'
-
+    %section.logo
+      = link_to 'Картинки', root_path, class:'dropdown-toggle'
     -#  %ul.dropdown-menu
     -#    - relative_sites.each do |f|
     -#      %li
@@ -13,21 +12,15 @@
     -#%section.search
     -#  = render partial: 'shared/search'
     -#
-
-    - if user_signed_in?
-      %ul.list.inline
-        %li= link_to 'Все', root_url
-        %li= link_to 'Мое', '#'
-    - else
-      %h1.list.inline Загрузи картинку спаси мир
+    %section.search
+      - if user_signed_in?
+        %ul.list.inline
+          %li= link_to 'Все', root_url
+          %li= link_to 'Мое', '#'
+      - else
+        %h1 Загрузи картинку спаси мир
     %ul.list.inline.session><
       - if user_signed_in?
-
-        %li.l.header-menu#genres-show><
-          = link_to '#', data:{type: 'js'} do
-            %i.icon-list
-            %span Категории
-
         %li.dropdown.notify
           = link_to '#', class:'dropdown-toggle', data:{toggle:'dropdown', target:'#'} do
             %span
@@ -53,16 +46,10 @@
 
         %li.dropdown.user
           = link_to edit_user_registration_path , class:'dropdown-toggle', data:{toggle:'dropdown', target:'#'} do
-            = image_tag user_avatar(current_user, :small)
             %span= current_user.username
             %i.icon-caret-down
 
           %ul.dropdown-menu
-            - if current_user.role? :admin
-              %li
-                = link_to admin_stats_path do
-                  %b Админка
-              %li.divider
             %li
               = link_to 'Персональная информация', current_user
             -#%li
@@ -70,10 +57,6 @@
             %li
               = link_to 'Выйти', destroy_user_session_path, :method => :delete
       - else
-        %li.header-menu#genres-show><
-          = link_to '#', data:{type: 'js'} do
-            %i.icon-list
-            %span Категории
         %li.header-menu><
           = link_to new_user_session_path, data:{type: 'js'} do
             %i.icon-login

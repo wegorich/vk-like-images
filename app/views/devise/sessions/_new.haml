@@ -1,0 +1,31 @@
+- enable_reg_link ||= false
+.auth
+  .block
+    %h2
+      Вход
+      - if enable_reg_link
+        = link_to 'Регистрация', new_user_registration_path, class: 'fancybox-modal r', data:{type: 'js'}
+      - if request.xhr?
+        = link_to '#', class: 'btn-close' do
+          %i.icon-remove
+    %p
+      c помощью аккаунта социальных сетей
+    = render 'devise/shared/list'
+
+  .block
+    = simple_form_for reg_resource, as: reg_resource_name, url: session_path(reg_resource_name), validate: true do |f|
+      %p
+        или с паролем
+      %section
+        = f.input :login, label: false, autofocus: true, placeholder: 'Ваш Email или username'
+
+        .attach-group
+          = f.input :password, label: false, placeholder: 'Ваш пароль'
+          = f.submit 'Войти', class: 'btn btn-green'
+        .input
+          %span.checkbox
+            = f.hidden_field :remember_me, value: '1', id: 'hidden'
+            = check_box_tag 'user[remember_me]',  '0'
+            = f.label :remember_me, 'не запоминать'
+      .input
+        = link_to 'Забыли пароль?', new_user_password_path, class: 'fancybox-modal', data:{type: 'js'}

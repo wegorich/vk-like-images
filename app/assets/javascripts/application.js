@@ -16,6 +16,8 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 
+//= require bootstrap/bootstrap-select
+//= require bootstrap/bootstrap-dropdown
 
 //= require timeago/jquery.timeago
 //= require timeago/jquery.timeago.ru_locale

@@ -1,0 +1,19 @@
+- content_for :title do
+  Смена пароля к аккаунту
+
+.auth-full
+  %h1.page-title
+    Смена пароля к аккаунту
+  .block
+    .auth
+      .block
+        = simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, validate: true do |f|
+          %section
+            = f.input :username, label: 'Имя', disabled: true
+            = f.input :password, autocomplete: 'off', label: 'Текущий пароль', autofocus: true, required: true
+            = f.input :current_password, label: 'Новый пароль', required: true
+            = f.input :password_confirmation,label: 'Повторить новый пароль', required: true
+            = f.submit 'Сохранить', class: 'btn btn-green'
+
+  .block
+    Что бы сменить пароль, заполните все предложенные поля.

@@ -1,0 +1,19 @@
+- content_for :title do
+  Регистрация через соц сети
+
+.social-group
+  .social-icon
+    = social_icon(@authorization.provider, 'sign')
+  = f.input :username, label: false, input_html: { value: @authorization.name }, placeholder: 'имя и фамилия'
+
+= f.input :email, label: false, autofocus:true, placeholder: 'введите свой email'
+
+%p.tooltip
+  Укажите адрес электронной почты.
+  %br
+  Может потребоваться для отправки важных
+  %br
+  уведомлений или просто при необходимости сменить пароль
+
+.attach-group
+  = f.submit 'Регистрация', class: 'btn btn-green r', style:'width: 30%!important'

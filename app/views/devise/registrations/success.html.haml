@@ -1,0 +1,14 @@
+.auth
+  .block
+    %h2
+      - if request.xhr?
+        = link_to '#', class: 'btn-close' do
+          %i.icon-remove
+    %p Регистрация почти закончена! Осталось совсем немного!
+    %p
+      Вам на указанный email
+      = current_user.email
+      выслана инструкция по подтверждению учетной записи.
+    %p Пожалуйста, перейдите в почтовый ящик и следуйте инструкциям.
+
+  = render partial: 'layouts/external/ga_registration'

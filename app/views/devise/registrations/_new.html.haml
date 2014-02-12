@@ -1,0 +1,32 @@
+= content_for :title do
+  Регистрация
+
+.auth
+  .block
+    = simple_form_for reg_resource, as: reg_resource_name, url: registration_path(reg_resource_name, {with_provider: params[:with_provider]}), validate: true do |f|
+      - if request.xhr? || !content_for?(:aside)
+        %h2
+          Регистрация
+          = link_to 'Уже зарегистрированы?', new_user_session_path, class: 'fancybox-modal r', data:{type: 'js'}
+          - if request.xhr?
+            = link_to '#', class: 'btn-close' do
+              %i.icon-remove
+      - else
+        %h2
+          Зарегистрируйтесь!
+        %p
+          Чтобы принять участие в коллективном решении проблем
+      %section
+        - if defined? @authorization
+          = render partial: 'devise/registrations/no_email', locals: {f: f}
+        - else
+          = render partial: 'devise/registrations/default', locals: {f: f}
+
+  - if !request.xhr? && content_for?(:aside)
+    .block
+      %p
+        или войдите c помощью аккаунта социальной сети:
+      = render 'devise/shared/list'
+      = link_to new_user_session_path, class: 'sing-in fancybox-modal', data:{type: 'js'} do
+        %i.icon-key
+        %span Вход по паролю

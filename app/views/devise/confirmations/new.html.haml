@@ -1,0 +1,19 @@
+- title 'Необходимо подвердить почту'
+
+.auth-full
+  %h1.page-title
+    Необходимо подвердить почту
+  .block
+    .auth
+      .block
+        = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+          - flash[:error] = f.error_notification
+          %h2 Получить письмо с инструкциями
+          %p
+            Это последний шаг на пути регистрации, приступим?
+          .input.attach-group
+            = f.input :username, required: true, label: false, placeholder: 'Имя пользователя'
+            = f.submit 'Получить', class: 'btn btn-green'
+
+  .block
+    %p Инструкции будут содержать ссылку для подтверждения вашего аккаунта
