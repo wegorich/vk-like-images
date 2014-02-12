@@ -1,0 +1,45 @@
+.solution-params-picker
+  .header
+    background: $list-lame
+    text-transform: uppercase
+    line-height: 1
+    font-size: $font-size * .6125
+    padding: $main-margin-big $main-padding
+    .descr
+      @include inline-block
+      float: right
+      li
+        padding-left: 0
+
+  .list-picker
+    li
+      margin-top: $border-width!important
+      padding: 0 $main-padding
+      height: $layout-margin + $main-margin/2
+      line-height: $layout-margin + $main-margin/2
+      opacity: 1
+      background: $dark-solution-gray
+      cursor: default
+      span
+        display: block
+        float: left
+        width: 60%
+        margin-right: 6%
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+      .slider
+        margin: $main-margin 0
+        float: left
+        width: 34%
+      &.max
+        color: $dark-black
+        font-weight: bold
+      &.none
+        color: $sub-gray
+
+  .footer
+    margin-top: $main-margin/6
+    .btn
+      width: auto
+      padding: 0 $main-padding

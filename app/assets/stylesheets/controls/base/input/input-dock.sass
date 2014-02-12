@@ -1,0 +1,16 @@
+.input-dock
+  position: relative
+  width: 100%
+  $margin: $header-line-height + $input-text-padding
+  margin-top: $margin
+  & > *
+    position: absolute
+    left: -$main-padding
+    right: -$main-padding
+    bottom: -$main-padding
+  
+  &.top
+    margin-bottom: $margin
+    & > *
+      bottom: auto
+      top: -$main-padding

@@ -1,0 +1,21 @@
+.solutions-map
+  .aside-item
+    &:first-child
+      margin-top: 0
+  .map-group
+    height: $layout-margin*16
+    @include border($solutions-map, 2)
+    margin-bottom: $layout-margin
+
+    img
+      max-width: none!important
+    [style*="/assets/map/group.png);"], [style*="/assets/map/active_group.png);"]
+      line-height: $layout-margin!important
+      font-size: 1.25em!important
+  .page-title
+    a
+      display: none
+    .hide + a
+      display: inline
+      margin-left: $main-margin
+      font-size: $font-size * 1.05

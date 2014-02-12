@@ -1,0 +1,60 @@
+.comment
+  padding: 0 $main-margin
+  margin: $main-margin 0
+  border-left: $base-border
+  .list
+    li
+      margin-top: $main-margin + 2*$border-width
+      padding: 0
+      &:first-child
+        margin-top: 0
+    i
+      color: $sub-gray
+  &.my > .heading a
+    color: $orange
+  
+  .detele
+    color: $red
+  
+  .comment
+    margin-top: $main-padding
+  
+  .body
+    position: relative
+    display: block
+    @include clearfix
+    word-wrap: break-word
+    line-height: $main-margin/2*3
+    .comment
+      margin-top: $main-padding
+
+  .heading
+    font-size: $font-size
+    height: $modal-padding
+    margin-bottom: $main-margin
+    color: $gray
+    @include clearfix
+    a
+      color: $light-black
+    .rate
+      font-size: $font-size
+    img
+      height: $modal-padding
+      width: $modal-padding
+      border-radius: $base-border-radius
+      margin-right:  $main-margin
+      float: left
+    > i
+      color: $black
+.comment-list
+  margin-left: 0
+  list-style: none
+
+.issue_comments
+  .list.inline
+    margin-left: $main-padding
+  
+  .input-dock
+    margin-bottom: $main-padding
+  
+

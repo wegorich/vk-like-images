@@ -1,0 +1,74 @@
+.full-body, .refinement, .solution
+  &:hover .rate
+    .vote_up, .vote_down
+      @include transition(all 0.6s ease)
+      opacity: 1
+
+.rate
+  cursor: pointer
+  float: right
+  $height: $main-padding
+  font-size: $height
+  color: $gray
+  .num
+    height: $height
+    overflow: hidden
+    margin-right: $main-padding
+  .vote_up, .vote_down
+    opacity: .0
+  .icon-thumbs-down:not(.show) + .num
+    margin-right: 0
+  &.plus
+    color: $green
+    .num
+      &:before
+        content: '+'
+      &.up
+        margin-right: 0!important
+
+  &.minus
+    color: $red
+  
+  &.vote-plus, &.vote-minus
+    &.plus
+      .num
+        color: #459510
+
+    &.minus
+      .num
+        color: #951010
+
+  &.vote-minus
+    i:last-child
+      color: #951010
+
+  &.vote-plus
+    i:first-child
+      color: #459510
+
+  i, .num
+    @include inline-block
+  
+  i
+    vertical-align: top
+    font-size: 0.9em
+    line-height: $height
+
+    &:first-child
+      color: #ca8787
+      &:hover
+        color: #ca8787
+
+    &:last-child
+      color: #75a959
+      &:hover
+        color: #75a959
+
+  &:hover
+    i + .num
+      color: #444 !important
+    i
+      @include transition(all 0.6s ease)
+      color: #959595
+    
+  

@@ -1,0 +1,56 @@
+.auth-full
+  @include clearfix
+
+  .page-title
+    padding: $main-margin 0 $layout-margin 0!important
+
+  > .block
+    float: left
+    width: 50%
+    &:last-child
+      line-height: 1.3
+      font-size: 1.05em
+      padding: 0 18% 0 5%
+
+
+  .auth
+    background: $light-auth-green
+    width: 100%
+    padding: $main-padding+$layout-margin 0
+    @include behavior
+    border-radius: 2 * $border-width
+    border: 2* $border-width solid $border-green-color
+    h2 a
+      line-height: 1.2
+    .block
+      display: block
+      width: 100%
+      padding: 0 2*$input-height
+      border-bottom: $border-width dashed $green
+
+      &:last-child
+        padding-top: $modal-padding
+        border-bottom: 0
+        padding-bottom: 0!important
+      &:first-child
+        margin-top: 0
+        padding-bottom: $modal-padding
+        border-right: 0
+        padding-top: 0!important
+      form
+        margin-top: 0
+      .providers
+        margin-bottom: 0
+
+    .fancybox-modal
+      color: $auth-green
+
+    .input
+      margin-top: $main-margin
+    .fancybox-skin
+      background: white
+      padding: $modal-padding !important
+      border-radius: 0
+      input
+        min-width: $input-width
+        width: 100%

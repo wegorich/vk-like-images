@@ -1,0 +1,23 @@
+.btn-hide-toggle
+  display: none
+
+.hide-toggle
+  .wrap
+    min-height: $layout-margin*3+$main-padding
+    overflow: hidden
+    @include inline-block
+    width: 100%
+    text-overflow: ellipsis
+
+  + .btn-hide-toggle
+    display: inline
+
+  &.open
+    .wrap
+      max-height: none!important
+.text
+  overflow: hidden
+  + .btn-hide-toggle
+    display: inline
+  &.open
+    max-height: none!important

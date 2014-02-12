@@ -1,0 +1,149 @@
+.full-descr 
+  position: relative
+  line-height: $header-line-height - $header-margin*2
+  font-size: 12px
+  padding-left: $header-line-height + $main-margin !important
+  a
+    text-decoration: underline
+  
+  img 
+    position: absolute
+    left: 0
+    top: 0
+    height: $layout-margin + $main-margin/2
+    width: $layout-margin + $main-margin/2
+
+.full-body 
+  background: white
+  border: $base-border
+  &:hover
+    border-color: darken($border-color, 4)
+  &:hover .content .title:before
+    border-left-color: darken($border-color, 4)
+  .manage-item
+    margin: $main-margin $main-padding 0
+    line-height: 1
+    color: $sub-gray
+    a
+      color: $black
+    .btn-link
+      margin: 0 $main-padding
+      color: $black
+      &:first-child
+        margin-left: 0
+  .solution-tree
+    padding-bottom: $main-padding + 2*$border-width
+    .body
+      border-top: $border-width solid $border-color
+      padding: $main-padding + 2*$border-width
+      padding-bottom: 0
+    h3
+      color: $dark-black
+      font-size: 1.4em
+      line-height: 1
+      margin: $modal-padding 0 $main-margin * 1.5
+      &:first-child
+        margin-top: 0
+
+    > .title
+      position: relative
+      color: $sub-gray
+      margin: 0 $main-padding + 2*$border-width - $main-margin-small/2
+
+      z-index: 2
+      + h3
+        margin-top: 0
+      > *
+        position: absolute
+        line-height: 1
+        background: white
+        padding: 0 $main-margin-small/2
+        top: - $main-margin-small
+
+        &:last-child
+          left: 0
+
+    ul
+
+      li
+        line-height: 1.4
+        position: relative
+        padding-left: $main-margin-big
+        &:before
+          position: absolute
+          top: -$main-margin-small
+          left: 0
+          content: ''
+          width: $main-margin-small
+          height: $main-margin * 1.5
+          @include inline-block
+          border-bottom: $border-width solid $orange
+          border-left: $border-width solid $orange
+        a
+          box-shadow: none
+          color: $black
+          white-space: nowrap
+          @include inline-block
+          max-width: 90%
+          line-height: 1.2
+          overflow: hidden
+          text-overflow: ellipsis
+          &:hover, &.open
+            color: $dim-orange
+
+
+  .text
+    margin-top: $main-margin
+    p
+      &:first-child
+        margin-top: 0!important
+  .content 
+    padding: $main-padding
+    .sub-title
+      a
+        color: $black
+    .title 
+      font-weight: normal
+      margin-bottom: $main-margin
+      padding-right: $layout-margin*3
+      .rate
+        margin-right: - ($layout-margin*3)
+      &:before, &:after
+        top: $main-padding
+        position: absolute
+        left: 100%
+        margin-left: -$border-width
+        content: ' '
+
+      &:before
+        margin-top: -$border-width
+        @include triangle($main-padding, $border-color, right)
+      &:after
+        @include triangle($main-padding - 2*$border-width, white, right)
+
+    p 
+      margin: $main-margin 0 0
+      word-wrap: break-word
+
+.full-main-content
+  @include clearfix
+  position: relative
+
+.full-show-body 
+  padding: 0 !important
+  background: none !important
+  margin: 0 !important
+  position: relative
+
+.sub-question 
+  .title 
+    font-weight: normal
+    .btn-hide 
+      color: #aac8eb
+      text-decoration: underline
+      &:hover 
+        color: #2f7994
+      
+      i 
+        padding-left: 4px
+        text-decoration: none

@@ -1,0 +1,36 @@
+.aside-map
+  margin-top: 0!important
+  background: white
+  @include border()
+  padding: $main-margin-small
+  position: relative
+  &:before, &:after
+    content: ''
+    position: absolute
+  &:before
+    top: - $main-margin/2
+    left: $layout-margin
+    z-index: 1
+    width: 23px
+    height: 50px
+    background: image-url('map/aside-clip.png') no-repeat
+  &:after
+    top: 100%
+    left: 0
+    z-index: -1
+    background: image-url('map/aside-shadow.png') no-repeat
+    width: 100%
+    height: 13px
+  .map
+    @include border()
+    height: $layout-margin*10 + $main-padding
+  + .aside-item
+    margin-top: $main-margin-big
+    .location
+      color: $sub-gray
+      line-height: $main-padding
+      span
+        color: $black
+        white-space: nowrap
+      .address
+        white-space: normal

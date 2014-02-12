@@ -1,0 +1,26 @@
+%section.landing
+  .block
+    %h1.title
+      LivePlaces
+
+    .text
+      %span{style:"color:#67c0b9"}
+        Персональный
+      навигатор по
+      %span{style:"color:#ead97d"}
+        любимым местам.
+      Участники сети могут
+      %span{style:"color:#ff916c"}
+        организовавывать встречи,
+      %span{style:"color:#eba7dd"}
+        находить друг друга и
+      %span{style:"color:#eba7dd"}
+        интересные места
+      в пару кликов.
+
+      А так же многое-многое другое ждет вас внутри!
+
+      Присоединяйтесь! Нас уже #{User.count} человек.
+
+  .block
+    = render partial: 'devise/registrations/new'

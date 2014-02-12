@@ -1,0 +1,29 @@
+.people
+  @include clearfix
+  position: relative
+  vertical-align: middle
+  display: block
+  width: 100%
+  margin-top: $main-padding +  4 * $border-width
+  font-size: 1.1em
+  &:first-child
+    margin-top: 0
+  .name
+    display: table-cell
+    height: $button-height
+    padding-left: $input-text-padding
+    text-align: left
+    vertical-align: middle
+    line-height: 1.5
+
+  .subscr
+    display: block
+    color: $light-black
+    font-size: $font-size - $border-width
+    line-height: 1
+
+  img
+    height: $button-height
+    width: $button-height
+    border: $base-border
+    float: left

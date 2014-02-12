@@ -1,0 +1,133 @@
+.select2-choice
+  box-shadow: none
+  border: $base-border
+  border-radius: $base-border-radius
+  background-image: none
+
+.select2-default
+  font-size: .8em !important
+  line-height: $main-padding - 2*$border-width
+  color: $gray!important
+  font-style: italic
+
+.select2-result-label, .select2-search-choice
+  @include clearfix
+  .avatar
+    float: left
+    height: $modal-padding
+    width: $modal-padding
+    $av-margin: ($input-height - 2*$border-width - $modal-padding)/ 2
+    margin: $av-margin $input-text-padding $av-margin $main-margin-small/2
+
+.select2-result-label
+  .avatar
+    $av-margin: ($input-height - $modal-padding)/ 2
+    margin: $av-margin $input-text-padding $av-margin 0
+
+.select2-container
+  width: 100%
+  display: block
+  &.select2-container-active
+    .select2-choices
+      border-color: $sub-gray !important
+
+  .select2-choices
+    display: block
+    box-shadow: none !important
+    padding: 0
+    box-shadow: none
+    background-image: none
+
+    .select2-search-field input
+      padding: $input-padding
+      height: $input-height - 2*$border-width
+      margin: 0
+      &.select2-active
+        background-color: transparent !important
+
+  $height: $main-padding + 2 * $border-width
+
+  .select2-search-choice
+    text-transform: lowercase
+    background: $lame !important
+    font-size: 0.9em
+    border-radius: $input-border-radius/2 !important
+    padding: 0 $main-padding 0 $main-margin/2 !important
+    color: $black !important
+    box-shadow: 0 0 3px 2px white !important
+    line-height: $height !important
+    white-space: nowrap
+    margin: 0 $input-text-padding $input-text-padding 0
+    border: 0 !important
+    height: $height
+
+  .select2-search-choice-close
+    color: $sub-gray
+    box-shadow: none
+    background: none
+    right: $main-margin/3
+    left: auto
+    top: $height/2 - $main-margin/2
+    font-size: $main-margin
+    &:hover
+      color: $red !important
+
+    &:after
+      content: 'x'
+      position: absolute
+      line-height: $main-margin
+      margin-left: $border-width*2
+
+.select2-container-multi .select2-choices .select2-search-field input.select2-active
+  transition: none
+  background-position: 99%!important
+
+.select2-drop
+  border-radius: 0
+  border: none
+  .select2-results
+    padding: 0
+    margin: 0
+    border-radius: 0
+    border: $base-border
+    .select2-result-label, .select2-searching
+      padding: 0 $input-text-padding
+      line-height: $layout-margin
+      height: $layout-margin
+
+    .select2-highlighted, .select2-searching
+      background: $sky-blue
+      color: $black
+
+.userpicker
+  $height: $input-height - 2*$border-width
+  .select2-search-choice
+    background: none !important
+    border-radius: 0 !important
+    padding: 0 $main-padding 0 0 !important
+    color: $black !important
+    box-shadow: none !important
+    line-height: $height !important
+    margin: 0 !important
+    border: 0 !important
+    height: $height
+    position: relative
+    &:after
+      position: absolute
+      content: "," !important
+      top: 0
+      left: 100%
+      margin-left: - $main-margin-small
+
+  .select2-search-choice-close
+    top: $main-margin/2
+  .select2-input
+    min-width: $layout-margin*3 !important
+  .select2-input
+    @include placeholder
+      font-style: normal !important
+      font-size: .9em !important
+      color: $gray!important
+
+.select2-offscreen
+  display: none

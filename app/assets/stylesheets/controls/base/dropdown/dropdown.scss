@@ -1,0 +1,128 @@
+.dropdown,.bootstrap-select {
+  position: relative;
+  &.open {
+    .icon-caret-down:before {
+      content: "\E89F";
+    }
+  }
+  .pull-right > .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown-menu {
+    @include behavior;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    min-width: 160px;
+    margin: 2px 0 0;
+
+    list-style: none;
+    background-color: #ffffff;
+    border: $base-border;
+
+    //@include box-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    li > a{
+      box-shadow: none;
+    }
+    & > .active {
+      background: $drop-down-hover;
+    }
+
+    & > .disabled {
+      color: $sub-gray;
+      :hover, :focus {
+        color: $sub-gray;
+        text-decoration: none;
+        cursor: default;
+        background-color: transparent;
+        background-image: none;
+      }
+    }
+
+    &> li > a, .mCSB_container > li > a{
+      display: block;
+      padding: 5px 15px;
+      &:hover, &:focus {
+        color: $black;
+        background: $drop-down-hover;
+      }
+      .num {
+        color: $black;
+      }
+    }
+
+    .divider {
+      height: 1px;
+      overflow: hidden;
+      background-color: $border-color;
+      border-bottom: $base-border;
+      padding: 0;
+    }
+  }
+
+  .dropdown-menu.up
+  {
+    margin-top: $main-padding;
+    &:before {
+
+      @include triangle($main-padding, $border-color, up);
+      content: '';
+      position: absolute;
+      top: -$main-padding;
+      left: 50%;
+      margin-left: -$main-padding/2;
+    }
+  }
+}
+
+.open {
+  *z-index: 1000;
+  & > .dropdown-menu {
+    display: block;
+  }
+}
+
+.aside-item .attach {
+  .dropdown-menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    li {
+      .btn{
+        display: block;
+        font-size: 13px;
+      }
+      padding: 0;
+    }
+  }
+}
+.aside-item.subscribe{
+  .active {
+    display: none;
+    text-align: left;
+    i{
+      margin-right: $main-margin;
+      font-size: $header-line-height;
+      color: #ed7148;
+      font-weight: lighter;
+      float:left;
+    }
+  }
+  &.active{
+    & > p{
+      display: none;
+    }
+    .active{
+      display: block;
+    }
+  }
+}

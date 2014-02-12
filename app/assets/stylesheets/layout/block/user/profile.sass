@@ -1,0 +1,85 @@
+.user-profile
+
+  .title
+    color: $black
+    line-height: 1
+    font-size: 1.05em
+  .title a
+    color: $black
+  .tags
+    margin-top: $main-margin
+  .people
+    margin-top: $input-text-padding
+    &:first-child
+      margin-top: 0
+  .attach-group
+    .input
+      position: relative
+    .map_text_field
+      padding-right: $input-height + $input-text-padding
+      &:focus
+        + i
+          color: $a-blue
+      + i
+        background-position: center center
+        cursor: pointer
+        position: absolute
+        right: $main-padding*2
+        bottom: 0
+        display: block
+        line-height: $input-height
+        height: $input-height
+        width: $input-height
+        font-size: 1.2em
+        color: $sub-gray
+        z-index: 300
+        &:hover
+          color: $a-dark-blue
+
+
+
+    >*:last-child
+      text-align: right
+      label
+        white-space: nowrap
+
+  .edit-map
+    .map
+      img
+        max-width: none!important
+      margin-top: $input-text-padding
+      height: $main-padding*10 + $main-margin/2
+      border: $border-width solid $map-border
+      + .checkbox
+        margin-top: $main-margin-small
+        margin-left: 0
+
+  .aside-item
+    h1
+      font-size: .7em
+  .main-content
+    .item-block
+      padding: $main-padding
+    section
+      margin-top: $main-padding
+      &:first-child
+        margin-top: 0
+    .half-block
+      @include outer-container
+      .half
+        @include span-columns(6)
+
+  .gift
+    margin-top: - 2*$layout-margin
+    padding-bottom: $main-margin/2
+    color: $gray
+    a
+      margin-left: $main-margin-small/2
+    i
+      font-size: 1.6em
+      float: left
+      margin-right: $main-margin-small
+
+
+
+

@@ -1,0 +1,43 @@
+- content_for :header do
+  = render partial: 'categories/sub_header'
+  = render 'layouts/header'
+
+- content_for :main do
+  - if flash.any?
+    %section.flash
+      - if flash[:error]
+        .item#flash_error
+          %i.icon-attention
+          = flash[:error]
+          = link_to '#', class: 'close' do
+            %i.icon-remove
+
+      - if flash[:notice]
+        .item#flash_notice
+          %i.icon-asterisk
+          = flash[:notice]
+          = link_to '#', class: 'close' do
+            %i.icon-remove
+
+      - if flash[:alert]
+        .item#flash_alert
+          %i.icon-attention-alt
+          = flash[:alert]
+          = link_to '#', class: 'close' do
+            %i.icon-remove
+
+  %section.main{class: params['controller']}
+    = yield(:profile_nav)
+    - if content_for? :aside
+      %section.main-content
+        = yield
+      %aside.aside-content
+        = yield(:aside)
+    - else
+      .full-main-content
+        = yield
+
+- content_for :footer do
+  = render 'layouts/footer'
+
+= render 'layouts/base'

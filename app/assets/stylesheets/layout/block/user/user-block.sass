@@ -1,0 +1,77 @@
+.user-block
+  @include clearfix
+  line-height: 1
+
+  .edit
+    position: absolute
+    right: $modal-padding
+    top: $layout-margin
+    a
+      color: $black
+      &:hover
+        color: $dark-black
+    i
+      font-size: 1.1em
+  .header
+    margin-bottom: $layout-margin
+    h1
+      color: $dark-black
+      margin-bottom: $main-margin
+      font-size: $modal-padding
+    .user-rating
+      color: $gray
+      .num
+        color: $sub-gray
+        cursor: help
+        &.minus
+          color: $btn-red
+        &.plus
+          color: $green
+          &:before
+            content: '+'
+  h4
+    color: $gray
+    margin-bottom: $main-margin
+  label
+    color: $gray
+  .checkbox label
+    color: inherit
+  p
+    margin-bottom: $main-padding
+    line-height: 1.4
+    &:last-child
+      margin-bottom: 0
+  .aside-block
+    float: left
+    width: 5 * $layout-margin
+    $margin: $main-margin/3*2
+    h4
+      margin-bottom: $margin
+    p
+      margin-bottom: 2*$margin
+      &:last-child
+        margin-bottom: 0
+
+    img
+      width: 100%
+      min-height: 5 * $layout-margin
+      margin-bottom: $main-padding
+      + .file
+        margin: (-$main-margin/2) 0 2*$main-padding !important
+        h4
+          margin: $main-margin/2 0 0
+
+  .providers
+    margin-top: $main-padding
+  .file + h4 + .providers
+    margin-top: $main-margin
+  .content-block
+    margin-left: 5 * $layout-margin + $main-padding
+    .attach-group
+      margin-top: $main-padding
+      >*
+        &:first-child
+          padding-right: 2*$main-padding
+        &:last-child
+          vertical-align: bottom
+          padding-bottom: ($layout-margin - $checkbox-height)/2

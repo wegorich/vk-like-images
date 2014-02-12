@@ -1,0 +1,55 @@
+.tabs
+  margin-top: - $tab-item-height
+  & > .list
+    @include clearfix
+    li
+      float: left
+      display: block
+      padding: 0!important
+      margin: 0 $main-margin-small/4
+      &.selected
+        margin: 0 $main-margin-small
+
+        & > a, &> span
+          font-weight: bold
+
+          &, &:hover
+            cursor: default
+            box-shadow: none
+            color: $black
+            background:  $tab-content-bg!important
+            @include border($tab-content-border)
+            border-bottom-color:  $tab-content-bg
+
+      &:first-child
+        margin-left: 0!important
+      &:last-child
+        margin-right: 0!important
+
+      > a, > span
+        display: block
+        color: $black
+        height: $tab-item-height
+        line-height: $layout-margin - 2*$border-width + $main-margin/2
+        padding: 0 $main-padding
+        @include linear-gradient($tab-content-top, $tab-content-bottom)
+        @include behavior
+        @include border($tab-content-border)
+        box-shadow: none
+      > span
+        a
+          margin-left: $main-margin/2
+          font-weight: normal
+          box-shadow: none
+          border-bottom: $border-width dotted
+          &:hover, &.open
+            box-shadow: none
+            border-bottom: $border-width dotted
+      > a:hover
+        box-shadow: none
+        color: $tab-content-text-hover
+        @include border($tab-content-hover)
+        border-bottom-color: $tab-content-border
+
+  .content
+    background: white

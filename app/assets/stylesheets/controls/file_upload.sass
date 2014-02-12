@@ -1,0 +1,108 @@
+
+$border: $base-border
+.fileinput-btn
+  display: none
+  overflow: hidden
+
+  input
+    position: absolute
+    top: 0
+    right: 0
+    margin: 0
+    opacity: 0
+    filter: alpha(opacity=0)
+    transform: translate(-300px, 0) scale(4)
+    font-size: $modal-padding
+    direction: ltr
+    cursor: pointer
+    display: block!important
+
+.file-uploader
+  margin-top: $main-padding
+  position: relative
+  .load
+    z-index: 1 !important
+  .fileinput-btn
+    display: block
+    position: absolute
+    top: 0
+    right: 40%
+  
+
+#dropzone
+  color: $black
+  position: relative
+  width: 100%
+  min-height: $button-height
+  line-height: 1
+  .on-hover, .on-out, .data
+    display: none
+  .descr
+    color: $black
+  .default, .data
+    z-index: 200
+  .default
+    color: $black
+    line-height: 1.4
+    .descr
+      color: $sub-gray
+    i
+      position: absolute
+      left: 0
+      top: $main-margin/2
+      font-size: $main-padding + 2* $border-width
+      color: $light-black
+  .data
+    line-height: $header-line-height
+    .icon-spinner
+      font-size: $modal-padding
+      line-height: $header-line-height
+      color: $blue
+
+  &.files
+    .default
+      display: none
+    .data
+      display: block
+  &.in
+    @include box-shadow(0 2px 5px #ddd)
+    position: absolute
+    vertical-align: middle
+    text-align: center
+    width: 100%
+    left: 0
+    top: 0
+    z-index: 1
+    height: $header-height + $input-text-padding
+    line-height: $header-height + $input-text-padding
+    border: $border
+    background: white
+
+    .on-out
+      display: block
+      position: absolute
+      top: $input-text-padding
+      left: $input-text-padding
+      right: $input-text-padding
+      bottom: $input-text-padding
+      line-height: $header-height - $input-text-padding
+      border: $border-width dashed dodgerblue
+
+    .default, .data
+      display: none
+
+    .on-drag
+      display: block
+      z-index: 200
+
+  &.in.hover
+    border-color: dodgerblue
+    padding: 0
+    @include transition (all 0.3s ease-out)
+    .on-out
+      display: none
+    .on-hover
+      text-color: #444
+      display: block
+
+

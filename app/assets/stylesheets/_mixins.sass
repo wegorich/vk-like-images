@@ -1,0 +1,52 @@
+=behavior
+
+=border($color: $border-color, $width: 1, $orient: none)
+  @if $orient == none
+    border: $width * $border-width solid $color
+  @else
+    border-#{$orient}: $width * $border-width solid $color
+
+=btn-semi-gr
+  +linear-gradient(#f3efe8, #f1e9dc)
+
+=before-abs
+  content: ''
+  position: absolute
+
+=trapeze
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    border-bottom: 4px solid transparent
+    border-left: 60px solid red
+    border-right: 4px solid transparent
+    height: 100%
+    width: 100%
+
+=triangle-before($size, $color, $direction, $top: false, $bottom: false)
+  &:before
+    content: ' '
+    position: absolute
+    right: 100%
+    @if $top
+      top: $top
+    @if $bottom
+      bottom: $bottom
+    +triangle($size, $color, $direction)
+
+=triangle-after($size, $color, $direction, $top: false, $bottom: false)
+  &:after
+    content: ' '
+    position: absolute
+    right: 100%
+    @if $top
+      top: $top
+    @if $bottom
+      bottom: $bottom
+    +triangle($size, $color, $direction)
+
+=search-result-gr
+  +linear-gradient(#f3693d, #dd592b)

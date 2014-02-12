@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{charset: 'UTF-8'}
+    %meta{name: 'description', content: content_for?(:description) ? yield(:description) : 'Мего страничка'}
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}/
+    -#%meta{content: '718ffd8a572ab087', name: 'yandex-verification'}/
+    -#%meta{content: 'cOSmDyosa6eroDRdZzjY6_ViOZFemAaT3BqxwSeCJow', name: 'google-site-verification'}/
+    %link{href: '/favicon.ico', rel: 'icon', type: 'image/icon'}/
+    - if content_for?(:keywords)
+      %meta{name: 'keywords', content: yield(:keywords)}
+    - else
+      %meta{content: t('meta.first'), lang: 'ru', name: 'keywords'}/
+      %meta{content: t('meta.keywords'), lang: 'ru', name: 'keywords'}/
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
+    = csrf_meta_tags
+    -#= include_gon
+    %title
+      = yield(:title)
+    = yield(:head)
+
+  %body
+    .wrap
+      = yield :header
+      = yield :full_screen
+      = yield :main
+      = yield :footer

@@ -1,0 +1,84 @@
+.toggle-group
+  position: relative
+.toggle
+  font-size: $font-size!important
+  display: none
+  position: absolute
+  bottom: 100%
+  background: $sub-black
+  margin-bottom: $layout-margin
+  text-shadow: none!important
+  margin-left: -310px
+
+  z-index: 9999
+  .simple_form
+    padding: $input-text-padding
+    min-width: $layout-margin * 21 + $main-padding
+    .wysihtml5 .toolbar a:first-child
+      margin-left: 0
+    label
+      color: $light-text!important
+    .input:last-child
+      margin-top: $layout-margin
+
+  .header
+    border-bottom: $base-border
+    border-color: $dark-border-color
+    text-align: center
+    color: white
+    font-size: $font-size * 1.05!important
+    white-space: nowrap
+    line-height: $button-height
+
+  .toggle-close
+    color: $sub-gray
+    box-shadow: none
+    margin-left: $main-margin
+    &:hover
+      color: white
+  &:before
+
+    @include triangle($main-padding, $sub-black, down)
+    content: ''
+    position: absolute
+    bottom: -$main-padding
+    left: 50%
+    margin-left: -$main-padding/2
+
+.custom
+  .simple_form
+    a
+      display: inline!important
+      width: auto
+      height: auto
+      border: 0
+      text-indent: 0
+      background: none
+      &:hover
+        background: none
+      font-size: $font-size
+    .select2-search-choice
+      margin: $main-margin-small/2 0 $main-margin-small/2 $input-text-padding/2 !important
+      text-transform: lowercase
+      .select2-search-choice-close
+        width: $font-size
+        height: $font-size
+  .input
+    line-height: inherit!important
+    margin: $main-padding 0 0
+    &:first-child
+      margin-top: 0
+    input
+      height: $input-height!important
+    .btn
+      height: $button-height!important
+    label
+      color: $light-text!important
+      line-height: 1.4!important
+    textarea
+      padding: $input-text-padding
+      color: $black
+      font-size: 14px
+      border: $base-border
+      background-color: white
+      border-radius: $base-border-radius

@@ -1,0 +1,27 @@
+.main.with-tabs
+  padding-bottom: 0!important
+
+.tab-content
+  margin-top: $tab-item-height * 2
+  padding-bottom: $footer-height+ $modal-padding
+  > .content
+
+    background: $tab-content-bg
+    @include border($tab-content-border)
+    border:
+      left: 0
+      right: 0
+    .full-main-content
+      padding: $main-padding 0
+      .main-content
+        padding-left: $input-text-padding!important
+  .main
+    padding:
+      top: 0
+      bottom: 0
+
+  #solution_list  > .control-panel
+    padding-bottom: $main-padding!important
+    border-bottom: $border-width solid $tab-content-border
+    margin-left: -$input-text-padding
+    padding-left: $input-text-padding!important

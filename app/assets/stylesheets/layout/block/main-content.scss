@@ -1,0 +1,99 @@
+.main {
+  .btn-link{
+    font-size: $font-size;
+    margin-left: $main-margin/2;
+    i{
+      opacity: .5;
+      margin-right: $main-margin-small/2;
+    }
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  $base-padding: 10px;
+  .main-content{
+    &.static {
+      padding-left: $solution-icon-height + $main-margin;
+      p{
+        margin-bottom: $main-padding;
+        line-height: 1.4em;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+    > .page-title{
+      padding-left: 0;
+    }
+  }
+  .page-title {
+    color: $sub-gray;
+    padding: 0 0 $main-padding $solution-icon-height + $layout-margin;
+    font-weight: lighter;
+    &.dark{
+      a {
+        color: $dark-black
+      }
+    }
+  }
+  .page-nav {
+    margin-bottom: $main-padding;
+    > .list {
+      padding-left: $solution-icon-height+$layout-margin;
+      font-size: 1.2em;
+      li {
+
+        $bord-size: 4px;
+        line-height: 1;
+        border-bottom: $bord-size solid transparent;
+        padding: 0 0 $main-margin 0;
+        margin-left: $layout-margin;
+        &:first-child {
+          margin-left: 0;
+        }
+        &.active {
+          border-color: $gray !important;
+          > * {
+            color: #444;
+          }
+        }
+        & > * {
+          display: block;
+          text-decoration: none;
+          box-shadow: none;
+          margin: 0;
+          padding: 0;
+        }
+        a:hover {
+          color: $dark-black;
+        }
+      }
+      border-bottom: $base-border;
+    }
+  }
+  .show-items-toggle {
+    display: block;
+    text-align: center;
+    $border-radius: $input-text-padding - 2 * $border-width;
+    a {
+      line-height: $button-height;
+      padding: $button-padding - $border-width $layout-margin*2;
+      border: $border-width solid #cde4ff;
+      border-radius: 0 0 $border-radius $border-radius;
+      color: #5f8ec8;
+      background-color: white;
+      border-top-width: 0;
+      box-shadow: none;
+      &:hover {
+        text-decoration: underline!important;
+      }
+
+    }
+    &.up a {
+      border-radius: $border-radius $border-radius 0 0;
+      border-top-width: $border-width;
+      border-bottom-width: 0;
+    }
+  }
+}
+

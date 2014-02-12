@@ -1,0 +1,123 @@
+.find-solution
+  font-size: $font-size - $border-width!important
+  z-index: 99
+  .block
+    padding: $main-padding 0
+    @include border($find-solution-bg)
+    margin-bottom: $main-margin-small
+    > *
+      margin:
+        left: $modal-padding
+        right: $modal-padding
+    &:last-child
+      margin-bottom: 0
+      padding-bottom: $main-padding - $main-margin-small
+  h4
+    color: $find-solution-title
+    line-height: 1
+  .search
+    input[type='text']
+      border-color: $find-solution-bg!important
+      height: $layout-margin - $main-margin-small/2
+      font-size: 1em
+      @include placeholder
+        font-weight: normal
+
+      &:focus
+        border-color: $sub-gray!important
+    .submit i
+      height: $layout-margin - $main-margin-small/2
+      line-height: $layout-margin - $main-margin-small/2
+
+  .descr
+    margin-top: $main-margin-small
+    padding: 0 0 0 $input-text-padding
+    line-height: 1
+    font-size: .9em
+
+    &, & .num, a
+      color: white!important
+      &:hover
+        color: white
+    a
+      box-shadow: none!important
+      border-bottom: $border-width dashed
+  .list
+    padding-bottom: 0!important
+    margin: $main-margin 0 0 0
+    li
+      padding-top: 0!important
+
+  .list li, #selected_tags .tags
+    .item
+      padding: $main-margin-small $modal-padding
+      display: block
+      cursor: pointer
+      .text
+        line-height: $main-margin * 1.5
+      .num
+        color: $find-solution-bg
+        vertical-align: top
+        line-height: $main-margin * 1.5
+
+      &:hover
+        background: $hover-tag-color
+      &.open
+        background: $find-solution-selected-bg
+        display: block!important
+        span:first-child
+          box-shadow: none
+      .close
+        color: $find-solution-bg
+        margin-left: - $main-margin
+        box-shadow: none
+        vertical-align: top
+        &:hover
+          color: $red
+  #selected_tags .tags
+    margin-top: $main-margin-small
+    .item
+      @include inline-block
+      margin: $main-margin-small/4 0
+      margin-right: $main-margin/2
+      > span:first-child
+        max-width: $main-margin * 10
+        padding-right: $main-padding
+  .order-filter
+    margin-top: $main-margin-small
+    padding: 0!important
+    .checkbox, .radio
+      position: relative
+      margin-left: $main-margin/2!important
+      &:first-child
+        margin-left: 0!important
+      [type="checkbox"],[type="radio"]
+        display: none
+        + label
+          padding: 0
+          line-height: $modal-padding - $main-margin-small/4
+          border-radius: 4 * $border-width
+          padding: 0 $input-text-padding
+          cursor: pointer
+          @include border($dark-nav-empty-bord)
+          @include behavior
+          &:hover
+            color: $find-solution-title
+        &:checked + label
+          padding-left: $main-padding
+          border-color: $dark-nav-bord
+          @include linear-gradient($nav-top, $nav-bottom)
+          &:before
+            position: absolute
+            content: ' '
+            left: $main-margin-small
+            top: 50%
+            margin-top: - $main-margin-small/4
+            @include triangle($main-margin-small, $black, down)
+    + h4
+      margin-top: $modal-padding
+  .num
+    margin-left: $main-margin/3
+    font-weight: normal
+    color: $gray
+

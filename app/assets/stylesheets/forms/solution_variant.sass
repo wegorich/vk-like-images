@@ -1,0 +1,19 @@
+.solution_variants
+  @include outer-container
+  margin-bottom: $main-margin
+
+  .item
+    margin-top: $main-margin/2
+    @include span-columns(1 of 3)
+    margin-right: 2%
+    width: 32%
+
+    input, textarea
+      @include placeholder
+        font-size: .9em
+        font-style: normal
+    input
+      border-radius: $base-border-radius $base-border-radius 0 0
+    textarea
+      margin-top: -$border-width
+      border-radius: 0 0 $base-border-radius $base-border-radius

@@ -1,0 +1,15 @@
+- unless user.nil?
+  .user-block
+    = user_avatar(user)
+    %ul.user-menu
+      %li
+        = link_to user.try(:username), cv_path(user.profile), class: 'gray'
+      %li
+        -#%span.user-rating{title: 'Рейтинг пользователя'}
+        -#  %i.icon-award.brown
+        -#  = user.try(:rating)
+        - if current_user and current_user != user and !user.nil?
+          = link_to profile_dialog_with_path(user), class: 'icon-linkable', title: t('btn.write_to_user') do
+            %i.icon-chat
+          = link_to new_complain_path(user: user.username), class: 'icon-linkable btn-modal', title: 'Пожаловаться на пользователя' do
+            %i.icon-attention

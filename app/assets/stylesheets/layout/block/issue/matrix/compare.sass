@@ -1,0 +1,41 @@
+.compare
+  @include clearfix
+  .comp-item
+    float: left
+    margin-right: 10%
+    width: 45%
+    &:last-child
+      margin-right: 0
+    .title
+      margin-bottom: $input-text-padding
+      color: $dark-black
+    .content
+      position: relative
+      background: $base-background-color
+      border: $base-border
+      border-color: $user-border-gray
+      padding: $main-margin-small $main-margin $main-margin-small 2*$main-padding
+      b
+        margin-right: $main-margin
+
+
+      [class^="attach-"]
+        position: absolute
+        left: - $border-width
+        top: - $border-width
+        bottom: - $border-width
+        width: $modal-padding
+        text-align: center
+        color: white
+        i
+          top: 50%
+          margin-top: -$input-text-padding
+          line-height: $main-padding
+          left: $main-margin-small/2
+          position: absolute
+
+      .attach-plus
+        background: $green
+
+      .attach-minus
+        background: $attach-back

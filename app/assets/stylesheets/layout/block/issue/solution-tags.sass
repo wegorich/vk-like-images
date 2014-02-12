@@ -1,0 +1,18 @@
+.solution-tags
+  .show-tags
+    color: $sub-gray
+    a
+      color: $black
+      box-shadow: none
+      border-bottom: $border-width dashed $gray
+      &:hover
+        border-bottom-color: $black
+
+  &.cut
+    .tag-item
+      display: none!important
+      &:first-child
+        display: inline-block!important
+
+  .btn-inline-edit + .tag-item
+    display: inline-block!important

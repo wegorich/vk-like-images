@@ -1,0 +1,75 @@
+.basic_form
+  font-size: 1em
+  h1, h2
+    color: $sub-gray
+    line-height: 1
+    margin-bottom: $layout-margin + $main-margin
+
+  .item-block
+    padding: $main-padding
+    > .input, > .field
+      padding-left: $forms-input-margin
+
+  .input, .field
+    label
+      position: absolute
+      left: 0
+      width: $forms-input-margin
+      text-align: right
+      padding-top: $main-margin/2
+      line-height: 1.5
+
+    input, textarea
+      width: 100%
+      display: block
+      padding:
+        left: $input-text-padding
+        right: $input-text-padding
+
+      border-radius: $base-border-radius
+      @include placeholder
+        font-size: .8em
+        font-style: italic
+
+
+    textarea
+      height: auto
+
+
+  > .btn
+    margin-top: $main-padding
+  
+  .field
+    display: block
+    clear: both
+  
+  $label_width: 15em
+  $input_width: 40em
+  legend
+    margin-left: $label_width
+    padding: .8em 0
+  
+  // Fields like radio buttons, etc, with label
+  .not_input_field
+    line-height: 2.5em
+  
+  .one-line
+    display: block
+    margin-top: $main-margin/2
+    label
+      display: inline-block
+      float: none
+      width: auto
+    
+  
+  input.small
+    width: $input_width/4
+  
+  input.medium
+    width: $input_width/2
+  
+  fieldset
+    margin-bottom: .5em
+    border: $base-border
+  
+

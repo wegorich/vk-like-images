@@ -1,0 +1,80 @@
+.add-solution-form
+  .checkbox
+    display: block
+    width: auto
+    margin-top: $main-margin!important
+    margin-left: 0!important
+  .input-btn .btn
+    width: auto!important
+  .edit-map
+    margin-top: $main-margin-small
+    background: white
+    position: relative
+    .input
+      margin-top: 0!important
+    .descr
+      display: block
+      z-index: 999
+      position: absolute
+      left: $main-padding*2
+      top: $input-height + $main-margin-small
+      background: $border-color
+      border-radius: $main-margin/2
+      padding: 0 $input-text-padding
+      line-height: $modal-padding - 2*$border-width
+      height: $modal-padding - 2*$border-width
+
+    .input
+      position: relative
+      .map_text_field
+        height: $button-height
+        padding: 0 $main-padding
+        border-radius: 2*$border-width 2* $border-width 0 0
+        padding-right: $main-padding * 8
+        @include placeholder
+          font-size: $font-size !important
+          font-style: normal !important
+          font-weight: 200 !important
+          color: $select-2-placeholder !important
+
+        &:focus + .angle:before
+          border-top-color: $dark-border-color
+      .angle
+        &:before, &:after
+          content: ''
+          position: absolute
+          top: 100%
+          left: $main-padding
+          margin-top: -$border-width
+          z-index: 999
+        &:before
+          margin-left: - $border-width
+          @include triangle($main-margin-big, $border-color, down)
+
+        &:after
+          @include triangle($main-margin, white, down)
+
+      .submit_address
+        cursor: pointer
+        display: block
+        line-height: $button-height
+        height: $button-height
+        padding: 0 $input-text-padding
+        position: absolute
+        right: 0
+        bottom: 0
+        color: $a-blue
+        z-index: 300
+        &:hover
+          span
+            border-bottom: $border-width solid $map-border-text
+            line-height: 1
+          color: $a-dark-blue
+
+    .map
+      img
+        max-width: none!important
+      height: $layout-margin*12 + 2* $input-text-padding
+      @include border()
+      border:
+        top: 0

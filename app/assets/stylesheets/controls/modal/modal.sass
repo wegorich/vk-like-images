@@ -1,0 +1,43 @@
+.fancybox-skin 
+  border-radius: $base-border-radius
+  padding: 2px !important
+  background: black
+  position: relative !important
+  .fancybox-close 
+    background: none
+    font-size: $layout-margin
+    color: white
+    box-shadow: none
+    &:before 
+      font-family: 'fontello'
+      content: "\e887"
+
+      position: absolute
+      text-shadow: 1px 1px 2px $black
+      left: $input-text-padding/2
+      top: $input-text-padding/2
+    
+    &:hover
+      color: $red
+
+.modal 
+  margin: auto
+
+  .fancybox-skin 
+    border-radius: $base-border-radius
+    padding: 0 !important
+    position: relative !important
+    .btn-close 
+      position: absolute
+      top: $main-margin-big
+      right: $main-margin-big
+      color: $light-black
+      font-size: 0.6em
+      box-shadow: none
+      &:hover 
+        color: $black
+        box-shadow: none
+      
+    
+  
+

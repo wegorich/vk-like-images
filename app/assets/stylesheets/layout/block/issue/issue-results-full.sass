@@ -1,0 +1,35 @@
+.issue-results-full
+  .page-title, .btn
+    margin-left: $main-padding
+  .btn
+    margin-top: $modal-padding
+    padding-right: $layout-margin
+  .content
+    width: 100%
+    border-spacing: 0
+    border-collapse: collapse
+    th
+      font-weight: normal
+      text-align: left
+      padding: 0 $main-padding
+
+      a
+        color: $black
+      .comma
+        color: $sub-gray
+        margin-left: $main-padding
+
+
+
+      &:last-child
+        font-weight: bold
+    td
+      padding: $input-text-padding $main-padding
+      background: $results-full-bg
+    tr
+      border-bottom: 6px solid $base-background-color
+      > *:first-child
+        border-right: 6px solid $base-background-color
+      &:hover
+        td
+          background: $results-full-bg-hover

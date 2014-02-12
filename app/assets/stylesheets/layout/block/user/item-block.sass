@@ -1,0 +1,32 @@
+.item-block,.user-block
+  position: relative
+  border: $base-border
+  border-color: $user-border-gray
+  background: white
+  border-radius: $base-border-radius
+
+.user-block
+  padding: $layout-margin - $main-margin /3 2* $main-padding
+
+.item-block
+  padding: $input-text-padding $main-margin
+  margin-top: $main-margin
+  p, .people .subscr
+    color: $sub-gray
+
+  .descr
+    color: $gray
+    line-height: 1
+    a
+      color: $black
+  & + .aside-item
+    margin-top: $main-padding
+
+  .close
+    position: absolute
+    right: $main-margin-small
+    top: $main-margin-small
+    line-height: 1
+    color: $gray
+    &:hover
+      color: $black

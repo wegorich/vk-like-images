@@ -1,0 +1,44 @@
+.solution-rate
+  margin-top: 0!important
+  .badge
+    background: $base-background-color!important
+  .item-block
+    margin-top: $input-text-padding!important
+    padding: $main-padding $main-margin!important
+    > h3
+      overflow: hidden
+      text-overflow: ellipsis
+      padding-left: $layout-margin
+      position: relative
+      display: block
+      min-height: 22px
+      .badge
+        position: absolute
+        left: 0
+
+    > *
+      margin-right: $layout-margin - $main-margin
+      &:first-child
+        margin-right: 0
+    p, .text
+      color: $black
+
+
+    .tags
+      margin-top: $main-padding
+    .solution-mark
+      margin: $main-margin 0 0 $layout-margin
+    .text
+      padding-left: $layout-margin
+      margin-top: $main-margin
+      line-height: 1.4em
+      p
+        padding-left: 0!important
+        &:first-child
+          margin-top: 0!important
+      .btn-hide-toggle
+        display: inline
+        margin-left: $main-margin/2
+
+  .compare
+    margin-left: $layout-margin

@@ -1,0 +1,49 @@
+.bootstrap-select
+  width: auto
+  &.open
+    .btn
+      box-shadow: none!important
+      &:after
+        @include triangle($input-text-padding, $black, up)
+        margin-top: $main-margin-small - $border-width
+      &:before
+        background-color: $drop-down-hover
+  .btn
+    line-height: $layout-margin
+    height: $layout-margin
+    background: white
+    border: $base-border
+    color: $black!important
+    padding: 0 $input-text-padding+$layout-margin 0 $input-text-padding!important
+    position: relative
+    box-shadow: none!important
+    &:after, &:before
+      position: absolute
+      content: ' '
+      right: 0
+    &:after
+      margin: ($layout-margin - $input-text-padding + $main-margin-small/2)/2 ($layout-margin - $input-text-padding)/2 0 0
+      @include triangle($input-text-padding, $black, down)
+    &:before
+      border-left: $base-border
+      height: $layout-margin
+      width: $layout-margin
+
+  .dropdown-menu
+    max-height: 300px!important
+    &.mCustomScrollbar
+      overflow: hidden!important
+    li
+      a
+        line-height: $main-padding
+      i
+        margin-left: $main-margin
+        color: $gray
+        display: none
+
+      &.selected
+        a
+          background: $drop-down-hover
+          color: $black
+        i
+          display: inline

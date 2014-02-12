@@ -1,0 +1,47 @@
+.stick
+  position: absolute
+  left: -$input-text-padding
+  top: $modal-padding
+  background: $sub-lame
+  line-height: $modal-padding
+  padding: 0 $input-text-padding
+  &:before
+    position: absolute
+    top: 100%
+    left: 0
+    content: ' '
+    @include triangle($input-text-padding, $sub-gray, up-right)
+
+.stick-blue
+  color: white
+  background-color: $light-blue
+  &:before
+    border-top-color: $blue
+
+.stick.big
+  border-radius: $base-border-radius
+  height: $layout-margin + 2 * $border-width
+  width: $modal-padding * 2
+  line-height: $layout-margin + 2*$border-width
+  font-size: $main-padding
+  text-align: right
+  top: 0
+  right: 100%
+  left: auto
+  margin-right: $main-margin
+  &:before
+    margin-top: -$border-width
+
+.stick-dark-blue
+  color: #f3f2ed
+  @include linear-gradient(#89a6c8, #869ab3)
+  @include behavior
+  &:before
+    border-top-color: #414d7c
+
+.stick-orange
+  color: white
+  @include linear-gradient(#fdd842, #f9cc39)
+  @include behavior
+  &:before
+    border-top-color: $orange

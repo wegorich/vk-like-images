@@ -1,0 +1,103 @@
+.matrix
+  @include clearfix
+  position: relative
+  margin-bottom: $layout-margin
+  padding-top: $main-margin
+  $width: 100%
+  .solutions
+    margin-left: $width/5
+    margin-right: $layout-margin
+    margin-bottom: 0
+    padding: 0
+    position: relative
+    .btn-round
+      position: absolute
+      top: 0
+      &.left
+        right: 100%
+        margin-right: $main-padding
+      &.right
+        left: 100%
+  .solution-content
+    overflow: hidden
+    position: relative
+    > ul
+      white-space: nowrap
+      position: relative
+      left: 0
+      > li
+        width: $width/4
+        @include inline-block
+        margin-left: 0
+        &:first-child
+          margin-left: 0
+    .matrix-cat-item
+      background: white
+      padding: ($layout-margin * 2 - $button-height)/2 $main-margin !important
+      .text-wrap
+        position: relative
+        opacity: 1
+        @include transition(width 3.0s ease-in-out)
+        height: $button-height
+        padding: 0 $input-text-padding
+        background: $matrix-green
+        border-radius: $base-border-radius
+        @include behavior
+      span
+        font-size: 1.2em
+        font-weight: bold
+        display: block
+        line-height: $button-height
+    .item
+      width: $width
+      float: none
+
+.new-matrix
+  .solution-item
+    margin: $main-margin 0 $main-padding - 2*$border-width
+    .title
+      input[type='checkbox']
+        display: none
+        + label
+          @include inline-block
+          height: $checkbox-height
+          padding-left: $checkbox-height
+          background: image-url('icons/check_box.png') no-repeat
+          background-position: 0(-$checkbox-height)
+          line-height: $checkbox-height
+          padding-bottom: 0 !important
+          cursor: pointer
+          color: transparent
+          + input
+            width: 40%
+            opacity: .6
+
+        &:checked + label
+          background-position: 0 0
+          + input
+            opacity: 1
+    .text
+      margin: $main-margin-small 0 0 $layout-margin
+      line-height: 1.4em
+      .btn-hide-toggle
+        margin-left: $main-margin/2
+        display: inline-block
+
+  .aside-item:first-child
+    margin: 0!important
+
+  .attach-group
+    > *
+      float: left
+      display: block
+      &:first-child
+        width: 92%!important
+    a
+      box-shadow: none
+      line-height: $input-height
+      font-size: $main-margin
+      color: $gray
+      padding-left: $main-margin/2
+      &:hover
+        color: $red
+

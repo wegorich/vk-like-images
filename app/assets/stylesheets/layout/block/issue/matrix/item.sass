@@ -1,0 +1,47 @@
+.matrix
+  .item
+    .header
+      a
+        display: block
+        box-shadow: none
+      p, img
+
+        margin-bottom: $main-margin-small*2
+        line-height: 1.2
+        width: $main-padding * 10
+      p
+        display: block
+        padding-right: $layout-margin
+        white-space: normal
+      img
+        //visibility: hidden
+        //height: $main-padding * 10
+        border: $base-border
+        border-radius: $base-border-radius
+        @include behavior
+    .content
+      border-top: $base-border
+      .matrix-cat-item
+        height: $layout-margin * 2
+        line-height: $layout-margin * 2
+        border-bottom: $base-border
+        padding: 0 $layout-margin
+
+  .title
+    $width: 100%
+    width: $width/5
+    float: left
+    h4
+      color: $gray
+      margin-left: $main-margin-small*2
+    .item
+      width: $width/5
+      position: absolute
+      bottom: 0
+      .text-wrap
+        display: table
+        height: 100%
+        span
+          display: table-cell
+          vertical-align: middle
+          line-height: 1.2

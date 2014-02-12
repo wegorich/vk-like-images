@@ -1,0 +1,53 @@
+.notify
+  color: $light-text
+
+  > .dropdown-menu
+    left: 50%
+    margin: $main-padding 0 0 (-($main-padding * 20 + $layout-margin)/2)
+    &.up:before
+      @include triangle($main-padding, $sub-black, up)
+      content: ''
+      position: absolute
+      top: -$main-padding
+      left: 50%
+      margin-left: -$main-padding/2
+
+  .dropdown-menu
+    line-height: 1.2
+    background: $sub-black
+    width: $main-padding * 20 + $layout-margin
+    border: 0
+    .date
+      color: $sub-gray-dark
+      margin-top: $main-margin-small
+
+    ul.notifications-list
+      > li.active
+        background: $black-light
+
+  a
+    color: $a-light-blue
+
+  .dropdown-container 
+    max-height: $layout-margin * 10
+    overflow-y: auto
+    position: initial
+    display: block
+    border: none
+    margin: 0
+    > li
+      &.active, &:hover
+        background: $black-light
+    
+  .footer
+    border-top: $base-border
+    border-color: $dark-border-color
+    padding: 0 10px
+    line-height: $layout-margin + $main-margin/2
+    a
+      box-shadow: none
+      color: $sub-gray-dark
+      &:hover
+        color: $light-text
+    i
+      color: $sub-gray-dark

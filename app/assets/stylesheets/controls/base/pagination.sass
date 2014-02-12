@@ -1,0 +1,58 @@
+.pagination
+  background: none !important
+  cursor: default
+  margin-top: $layout-margin !important
+  @include clearfix
+  line-height: $modal-padding
+  display: table
+  width: 100%
+
+  a
+    box-shadow: none
+    &:hover
+      color: $blue
+
+  .nav
+    color: $gray
+    &.loading
+      opacity: 0.8
+      background: image-url("icons/comment-ajax-loader.gif") no-repeat center right
+
+    a, span, em
+      font-family: 'PT Sans Caption'
+      font-size: $font-size + 1
+      $height:  $modal-padding + 2*$border-width
+      line-height: $height
+      height: $height
+      color: $black!important
+      min-width: $height
+      padding: 0 $main-margin-small
+      border-radius: $main-margin-small/2
+      margin: 0 $input-text-padding/2
+      @include border()
+      @include inline-block
+      @include behavior
+      &:first-child
+        margin-left: 0
+      &:hover
+        @include linear-gradient($nav-bottom, $nav-top)
+
+    .current, .current:hover
+      border-color: $dark-nav-bord
+      @include linear-gradient($nav-top, $nav-bottom)
+
+  .results
+    float: right
+    line-height: 2
+    .select2-focusser.select2-offscreen
+      display: none
+    .select2-choice
+      margin-left: $main-margin
+      box-shadow: none
+      border: $base-border
+      border-radius: $base-border-radius
+      @include behavior
+      background-image: none
+      div
+        background: none
+        border: 0

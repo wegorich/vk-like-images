@@ -1,0 +1,56 @@
+.notifications
+  padding-top: $main-margin
+  .notification
+    padding: 0
+    .date
+      position: absolute
+      left: 0
+      top: $main-margin
+      display: block
+      width: $modal-padding + $main-padding
+      color: $black
+
+  .checkbox
+    label
+      padding-left: $layout-margin!important
+      color: $sub-gray
+
+    input:checked+label
+      color: $black!important
+
+.dropdown-menu .notification
+  .avatar + a
+    color: $gray
+
+.notification
+  line-height: 1.2
+  position: relative
+  padding: $main-margin
+  padding-left: $layout-margin + $main-margin*2
+
+  img 
+    position: absolute
+    left: 0
+    top: 0
+    width: $layout-margin
+    max-height: $layout-margin
+    margin: $main-margin
+  .avatar + a
+    color: $black
+  .sub-gray
+    color: $gray
+  .date 
+    font-size: 12px
+    color: $sub-gray
+
+  .content
+    padding: $main-margin
+    position: relative
+    padding-left: $layout-margin + $main-margin*2
+    margin: 0 0 $layout-margin $main-padding + $modal-padding
+    img
+      border: $base-border
+      border-color: $gray
+  &:last-child
+    .content
+      margin-bottom: 0

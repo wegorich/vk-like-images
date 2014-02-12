@@ -1,0 +1,36 @@
+#{$all-text-inputs}, textarea, .select2-container-multi .select2-choices, input.text
+  position: relative
+  width: 100%
+  font-weight: normal
+  height: $input-height
+  padding: $input-padding
+  font-size: 14px
+  border: $base-border
+  background-color: white
+  behavior: url(/assets/PIE.htc)
+  border-radius: $base-border-radius
+  &:focus
+    border-color: $sub-gray
+    z-index: 100 !important
+    +transition(all 0.3s ease-in-out)
+  &:disabled, &.disabled
+    cursor: not-allowed
+    background-color: $base-background-color
+
+.hint
+  color: $sub-gray
+  display: block
+  margin-top: $main-margin / 2
+  line-height: 1.5
+
+textarea
+  resize: none
+  line-height: 1
+  display: block
+  height: auto
+  padding: $input-text-padding
+
+@import input-btn
+@import input-dock
+@import select2
+@import text-editor

@@ -1,0 +1,90 @@
+.voting
+
+  p, h3
+    line-height: 1
+  h3
+    a, .r
+      font-size: 1.2em
+      box-shadow: none
+      &:hover
+        box-shadow: none
+    + .input
+      margin-top: $main-padding
+  .input
+    margin-top: $layout-margin
+    &:first-child
+      margin-top: 0!important
+    input[type="radio"]+ label
+      padding-left: $radio-height + $main-margin + $main-margin-small/2
+      color: $dark-black
+      font-size: 1.2em
+      line-height: 0.8
+    .checkbox
+      line-height: 1
+      height: $main-padding+ $main-margin/2
+      float: left
+      width: 54%
+      input[type="checkbox"]
+        padding-left: $radio-height + $main-margin
+
+      input[type="text"]
+        width: 90%
+        position: relative
+        top: -($input-height - $checkbox-height)/2 + 2*$border-width
+        @include placeholder
+          font-size: .8em
+          font-style: italic
+          opacity: .75
+
+      input:checked + label + input, input:focus
+        @include placeholder
+          opacity: 1
+    .dropzone
+      width: 46%
+      float: left
+
+    p
+      padding-left: $radio-height + $main-margin  + $main-margin-small/2
+      margin-top: $main-margin
+      line-height: 1.4
+    .btn
+      padding: 0 $layout-margin
+      + a
+        margin: 0 $main-padding + $modal-padding
+    .tags
+      margin-left: $radio-height + $main-margin + $main-margin-small/2
+      .tag
+        background: none
+        border: $base-border
+        box-shadow: none
+        height: auto
+        line-height: $main-margin-small * 2
+        padding: 0 $main-margin-small
+        color: $sub-gray
+        max-width: none
+        .num
+          color: $black
+          max-width: none
+    &.result
+      display: table
+      width: 100%
+      > *
+        display: table-cell
+        vertical-align: top
+        &:first-child
+          width: $border-width
+        &:last-child
+          padding-left: $main-margin
+      .text, .compare, .solution-mark
+        padding-left: 0
+        margin-left: 0
+
+
+      .badge
+        @include inline-block
+        border-radius: $main-margin
+        background: white
+        border: $base-border
+        line-height: $main-padding
+        padding: 0 $main-margin/2
+        margin-right: $main-margin-small/2

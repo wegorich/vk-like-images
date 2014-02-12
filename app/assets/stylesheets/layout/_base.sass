@@ -1,0 +1,156 @@
+*
+  margin: 0
+  padding: 0
+
+.r
+  float: right
+
+.l
+  float: left
+
+\:focus
+  outline: none
+
+.animated
+  +animation-duration(0.3s)
+
+img
+  max-width: 100%
+
+.str-removed, .red, .diffdel, del.diffmod
+  color: $red !important
+  text-decoration: line-through
+
+.str-added, .green, .diffins, ins.diffmod
+  color: $green !important
+
+.no-padding
+  padding: 0 !important
+
+[class^="icon-"]:before, [class*=" icon-"]:before
+  width: auto
+
+.no-data
+  text-align: center
+  color: $sub-gray
+
+.wrapper
+  +outer-container
+  padding: 0 $main-padding
+
+h1, h2, h3, h4
+  font-weight: normal
+
+h1
+  font-size: 1.6em
+
+body
+  background: $base-background-color
+  font-family: $helvetica
+  font-weight: 400
+  font-size: $font-size
+  line-height: 22px
+  min-width: 1024px
+  color: $black
+
+.comma
+  &:after
+    content: ','
+
+img
+  color: transparent
+
+html, body
+  height: 100%
+
+.wrap
+  min-height: 100%
+  position: relative
+
+.clearfix
+  +clearfix
+
+a, .file > label
+  cursor: pointer
+  color: $a-blue
+  +transition(all 0.1s ease-in-out)
+  text-decoration: none
+  box-shadow: $link-box-shadow
+  behavior: url(/assets/PIE.htc)
+  &:hover
+    color: $a-dark-blue
+    box-shadow: $link-hover-box-shadow
+    text-decoration: none !important
+    i
+      text-decoration: none
+
+.sub-gray
+  color: $sub-gray
+
+.no-paddin
+  margin: -20px
+
+h1, h2, h3, h4, h5, h6
+  small, .small
+    font-size: .8em
+    color: #666
+    font-weight: normal
+
+.main
+  padding: $main-padding $main-padding $footer-height + $main-padding
+  +outer-container
+  .main-content
+    width: 70%
+    float: left
+    background: none
+    margin: 0
+    padding: 0
+
+.control-panel
+  padding: 0 !important
+  background: none !important
+  margin-top: $input-text-padding !important
+  .simple_form .input
+    margin: 0
+
+.users
+  .s-icon-padding
+    margin-top: $main-margin
+    &:first-child
+      margin-top: 0
+
+.s-icon-padding
+  margin-left: $solution-icon-height + $layout-margin
+
+.solution-icon
+  position: absolute
+  width: $solution-icon-height
+  min-height: $solution-icon-height
+  left: 0
+  background: image-url("icons/solutions.png") no-repeat
+  background-position: 0 -56px
+  &.on
+    background-position: 0 0
+    text-align: center
+    line-height: $solution-icon-line-height
+    font-size: 18px
+    .descr
+      position: absolute
+      color: $black
+      width: $solution-icon-height
+      top: 100%
+      margin-top: $main-margin
+      text-align: center
+      font-size: 12px
+      line-height: 1
+
+.hide
+  display: none !important
+
+.in_archive
+  color: red
+
+@import "footer"
+@import "header"
+@import 'auth/base'
+@import 'block/base'

@@ -1,0 +1,71 @@
+.tag-breadcrumbs
+  background: $sub-lame
+  border-bottom: $tag-breadcrumbs-border
+  .full-main-content
+    @include outer-container
+    padding: 0 $main-padding
+    vertical-align: middle
+    display: table
+    li
+      position: relative
+      padding: $main-padding 0 $main-padding -$main-margin 2 * $layout-margin
+      display: table-cell
+      vertical-align: middle
+      .no-data
+        white-space: nowrap
+        margin-top: -($main-margin + 2* $border-width)
+      .tags
+        margin-bottom: 0
+        height: $main-margin
+      .tag
+        background: none
+        border-radius: 0
+        padding: 0
+        height: auto
+        line-height: 1
+        box-shadow: $link-box-shadow
+      .tag-link
+        float: left
+        line-height: 1
+      &.current
+        font-size: 1.2em
+        margin-bottom: 0
+        .tag
+          box-shadow: none
+          color: #444
+          span
+            max-width: none
+            white-space: nowrap
+      > *
+        position: relative
+        &:after, &:before
+          content: ' '
+          position: absolute
+          left: 100%
+          top: 50%
+          margin-left: $main-padding - 2*$border-width
+        &:after
+          margin-top: -(2.7*$main-padding - 10*$border-width)/2
+          @include triangle(2.7*$main-padding - 10*$border-width, $sub-lame, right)
+        &:before
+          margin-top: -(2.7*$main-padding - 2*$border-width)/2
+          @include triangle(2.7*$main-padding - 2*$border-width, $tag-breadcrumbs-color, right)
+
+      &:last-child
+        padding-right: 0
+        > *
+          &:after, &:before
+            border: 0
+
+      &:first-child
+        padding-left: 0
+
+@-moz-document url-prefix()
+  .tag-breadcrumbs
+    .full-main-content
+      display: block
+      width: auto
+      > *
+        box-sizing: none
+        display: table
+        @include outer-container

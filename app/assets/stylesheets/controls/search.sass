@@ -1,0 +1,122 @@
+.search-field-form
+  width: 100%
+  $submit-font-size: 20px
+  position: relative
+  @include inline-block
+  .wraphidden
+    margin: 0
+    padding: 0
+    display: inline
+
+
+
+  input[type="text"]
+    padding: $input-search-pading
+    padding-right: $layout-margin
+    border-radius: $input-border-radius
+    @include behavior
+
+  input[type="text"], .submit
+    z-index: 2!important
+    position: relative
+  .submit
+    position: absolute
+    right: 0
+    top: 0
+    padding: 0 $input-border-radius 0 0
+    font-size: 1.4em
+    padding: 0 $main-margin-small/2
+    border: 0
+    background: transparent
+    cursor: pointer
+    color: $gray
+    i
+      display: block
+      line-height: $layout-margin - $border-width *2
+      width: $input-height
+      height: $input-height - $border-width *2
+  .ui-helper-hidden-accessible
+    display: none
+  .auto-drop
+    display: none
+    z-index: 101 !important
+    position: absolute
+    top: 100%
+    background: white
+    border: $base-border
+    margin: - 2*$border-width 0 0
+    cursor: default
+    left: $input-text-padding
+    right: $input-text-padding
+    .ui-autocomplete
+      width: auto !important
+      left: 0 !important
+      top: 0 !important
+      height: 300px
+  .submit + .ui-autocomplete
+    position: absolute
+    top: 50%!important
+    background: white
+    padding-top: $input-height/2
+    border: $base-border
+    max-height: 300px
+  .ui-autocomplete
+    z-index: 1!important
+    overflow: auto
+    position: relative
+    color: #717171
+    > li.selected
+      background: $drop-down-hover
+    > li
+      line-height: 1.4
+      font-size: 1.1em
+      > a
+        padding: $main-margin/2 $main-padding
+        color: #717171
+        box-shadow: none
+        display: block
+        &:focus, &.ui-state-focus
+          background: $drop-down-hover
+    strong
+      color: black!important
+      font-weight: 400
+
+    .tag-type
+      .num
+        margin-left: $input-text-padding
+        color: $gray
+    .people
+      margin: 0
+      font-size: 1em
+      .subscr
+        color: $gray!important
+
+    .category
+      position: relative
+      left: 0
+      right: 0
+      border-top: $base-border
+      padding: 0
+      &:first-child
+        border: 0
+        padding-bottom: 0
+      span
+        padding: $input-text-padding $main-padding 0 0
+        color: #b1b1b1
+        font-weight: 300
+        font-size: 0.9em
+        position: absolute
+        top: 100%
+        right: 0
+        line-height: 1
+        z-index: 1
+
+  .auto-controls
+    border-top: $base-border
+    text-align: right
+    padding: 0 $main-padding
+    line-height: $layout-margin
+    @include clearfix
+
+    li:first-child
+      float: left

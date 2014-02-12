@@ -1,0 +1,33 @@
+.list-picker
+  li
+    margin-top: $border-width
+    display: block
+    background: $list-lame
+    padding: $main-margin
+    opacity: 0.75
+    @include clearfix
+    cursor: pointer
+    .descr
+      font-size: $font-size
+      float: left
+      height: $layout-margin
+      max-width: 48%
+      line-height: 1.2
+      h3
+        overflow: hidden
+        color: $dark-black
+        text-overflow: ellipsis
+
+    a
+      float: right
+      display: none
+      height: $layout-margin
+      line-height: $layout-margin
+      box-shadow: none!important
+
+    &:hover
+      opacity: 1
+      a
+        display: block
+    &:first-child
+      margin-top: 0

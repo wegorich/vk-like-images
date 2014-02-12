@@ -1,0 +1,35 @@
+.input
+  input[type='radio'], input[type='checkbox']
+    display: none
+    + label
+      height: $radio-height
+      /* the height of the image */
+      padding-left: $radio-height*1.5
+      /* the width of the image plus the gutter */
+      background: image-url("icons/radio.png") no-repeat
+      background-position: 0(-$radio-height)
+      line-height: 1
+      padding-bottom: 0 !important
+      cursor: pointer
+      &.checked
+        background-position: 0 0!important
+        color: $dark-black!important
+
+    &:checked + label
+      background-position: 0 0
+      color: $dark-black
+
+  input[type='checkbox'] + label
+    background: image-url('icons/check_box.png') no-repeat
+    height: $checkbox-height
+    line-height: $checkbox-height
+    padding-left: $checkbox-height+$main-margin-small
+    background-position: 0(-$checkbox-height)
+
+.radio, .checkbox
+  label
+    @include inline-block
+    display: inline-block !important
+  margin-left: $layout-margin
+  &:first-child
+    margin-left: 0

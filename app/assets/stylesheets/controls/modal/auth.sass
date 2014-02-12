@@ -1,0 +1,38 @@
+.modal
+  .auth
+    background: $light-green
+    width: 524px
+    padding: $main-padding+$layout-margin 0
+    @include behavior
+    border-radius: 2 * $border-width
+    h2 a
+      line-height: 1.2
+    .block
+      display: block
+      width: 100%
+      padding: 0 2*$input-height
+      border-bottom: $border-width dashed $green
+
+      &:last-child
+        padding-top: $modal-padding
+        border-bottom: 0
+        padding-bottom: 0!important
+      &:first-child
+        margin-top: 0
+        padding-bottom: $modal-padding
+        border-right: 0
+        padding-top: 0!important
+      form
+        margin-top: 0
+      .providers
+        margin-bottom: 0
+
+    .input
+      margin-top: $main-margin
+    .fancybox-skin
+      background: white
+      padding: $modal-padding !important
+      border-radius: 0
+      input
+        min-width: $input-width
+        width: 100%

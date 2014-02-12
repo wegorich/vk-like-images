@@ -1,0 +1,23 @@
+.ui-tooltip
+  position: absolute
+  z-index: 9999
+  .ui-tooltip-content
+    position: relative
+    padding: $main-margin-small * 1.5 $main-margin
+    max-width: $layout-margin * 10
+    background: $sub-black
+    color: $light-text
+  &.arrow
+    .ui-tooltip-content:before
+      content: ''
+      position: absolute
+      left: 50%
+      margin-left: -$main-padding/2
+
+    &.top .ui-tooltip-content:before
+      @include triangle($main-padding, $sub-black, up)
+      top: -$main-padding
+
+    &.bottom .ui-tooltip-content:before
+      bottom: -$main-padding
+      @include triangle($main-padding, $sub-black, down)

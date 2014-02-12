@@ -1,0 +1,100 @@
+.input-btn
+  position: relative
+  .input
+    input
+      padding-right: 18%
+      z-index: 102
+    
+  
+  .btn
+    position: absolute
+    right: 0
+    top: 0
+    z-index: 101
+
+.input-btn
+  textarea, pre
+    margin: 0
+    outline: 0
+    border: 0
+  
+
+  .active
+    position: relative
+    height: auto
+    @include clearfix
+    >
+
+      textarea
+        height: auto
+        background: transparent
+        white-space: pre-wrap
+        word-wrap: break-word
+
+        width: 80%
+        overflow: hidden
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        resize: none
+
+      pre
+        height: auto
+        background: transparent
+        white-space: pre-wrap
+        word-wrap: break-word
+
+        display: block
+        padding: $input-padding
+
+        visibility: hidden
+        width: 80%
+        float: left
+
+      .btn
+        display: none
+
+      .ready .btn
+        display: block
+
+  
+  
+
+.input-btn
+  position: relative
+  border: $base-border
+  & > textarea
+    width: 80%
+  
+  .input
+    width: 100%
+    margin-top: 0
+    & > input, textarea, .select2
+      display: block
+      z-index: 200
+    
+    &.submit
+      & > input, textarea, .select2
+        z-index: 10 !important
+      
+      width: 74%
+      &.full
+        width: 100%
+      
+    
+    textarea
+      overflow: hidden
+    
+  
+  .btn
+    position: absolute
+    right: -$border-width
+    bottom: -$border-width
+    z-index: 300
+    width: 25%
+    padding: 0
+
+
+  &.select
+    border: none

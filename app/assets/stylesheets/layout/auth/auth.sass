@@ -1,0 +1,78 @@
+.auth
+  background: $light-green image_url('landing-bg.png') repeat-x
+  background-position: center bottom
+  font-size: 0
+  .block, .simple_form, a
+    color: $dark-green
+    font-size: $font-size
+
+  .block
+    @include inline-block
+    vertical-align: middle
+    width: 50%
+    padding: $auth-padding
+    border-right: $border-width dashed $green
+    &:last-child
+      border-right: 0
+
+    form
+      margin-top: -2 * $main-margin
+  .input.attach-group
+    margin-top: $layout-margin!important
+
+  .attach-group
+    .input
+      margin-top: 0!important
+    .btn
+      width: 96%!important
+      margin-left: 4%
+      text-align: center
+      background: $dark-green
+      &.r
+        float: right
+
+  p
+    margin-bottom: $main-margin
+    line-height: 1
+
+  .btn-social
+    border-color: $green
+    font-size: 1.15em
+
+  h1,h2, .simple_form h1, .simple_form h2
+    color: $dark-green
+    margin-bottom: $main-padding
+
+  .simple_form
+    .attach-group
+      .btn
+        padding: 0
+    input:disabled
+      background: $disabled-green
+    .input
+      margin-top: $main-margin
+      input
+        border-radius: 0
+        height: $button-height
+        padding-left: $input-text-padding
+        border-color: $border-color-green
+        &:focus, &:active
+          border-color: $green
+
+        @include placeholder
+          font-style: italic
+          font-size: 0.9em
+
+  .sing-in
+    color: $dark-green
+    i
+      font-size: 1.2em
+      text-decoration: none
+    &, &:hover
+      box-shadow: none!important
+    span
+      box-shadow: $link-box-shadow
+    &:hover
+      span
+        box-shadow: $link-hover-box-shadow
+

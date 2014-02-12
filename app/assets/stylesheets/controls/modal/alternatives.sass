@@ -1,0 +1,29 @@
+.fancybox-inner
+  .alternatives
+    max-width: $max-width * .8!important
+    min-width: $layout-margin * 22 + $modal-padding
+    margin: 0
+    position: relative
+    .meter
+      display: none
+
+  .btn-close
+    position: absolute
+    top: $main-margin-big
+    right: $main-margin-big
+    color: $light-black
+    font-size: $font-size !important
+    box-shadow: none
+    z-index: 1
+    transition: none
+    &:hover
+      color: $black
+      box-shadow: none
+
+  .alter-item
+    @include border($solution-rate-bord, 3)
+    border-radius: $main-margin/4
+    .cr-item
+      padding: 0
+    .content
+      width: auto

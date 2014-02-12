@@ -1,0 +1,33 @@
+.flash
+  padding: 0 $main-padding
+  @include outer-container
+  .item
+    width: 70%
+    margin-top: $main-padding
+    padding: $main-padding - 2* $border-width  $main-padding $main-padding - 2* $border-width $main-padding*3
+    background: $flash-bg
+    line-height: 1.4em
+    position: relative
+    @include border($flash-border)
+
+    > i
+      position: absolute
+      left: $main-padding
+      font-size: 1.4em
+    &#flash_error > i
+      color: $flash-error-color
+
+    &#flash_notice > i
+      color: $flash-border
+
+    &#flash_alert > i
+      color: $flash-alert-color
+    > .close
+      position: absolute
+      right: $main-margin/2
+      top: $main-margin/2
+      font-size: 1.2em
+      color: $flash-border
+      box-shadow: none!important
+      &:hover
+        color: $flash-error-color

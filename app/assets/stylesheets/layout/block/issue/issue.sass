@@ -1,0 +1,88 @@
+.issue
+  position: relative
+  padding: $main-margin * 1.5 0 0 0
+  margin-top: $main-margin * 1.5
+  border-top: $base-border
+  .index
+    color: $light-black
+
+  p
+    line-height: 1.6
+    word-wrap: break-word
+
+  &:first-child
+    border-top: 0
+    margin-top: 0
+    padding-top: 0
+
+  &:last-child .content
+    border-bottom: none
+
+  .solution-author
+    margin-bottom: $main-margin/2
+    position: relative
+    a
+      color: $black
+
+    .rate
+      float: none
+      font-size: 13px
+
+  .solution-body
+    background: white
+    border: $base-border
+    border-color: $solution-gray
+    padding: $input-text-padding $main-margin
+    position: relative
+    border-radius: $main-margin / 2
+    &:before, &:after
+      position: absolute
+      bottom: 100%
+      left: $layout-margin
+      content: ' '
+
+    &:before
+      @include triangle($main-margin + 2* $border-width, $solution-gray, up)
+
+    &:after
+      @include triangle($main-margin, white, up)
+      margin-left: 1px
+    + .solution-author
+      margin-top: $main-margin
+  .descr
+    color: $sub-gray
+    font-size: $main-margin
+    line-height: 1
+    margin-bottom: $main-margin
+    a
+      color: $black
+    .issue-tags
+      line-height: $layout-margin
+
+  .title
+    margin-bottom: .2em
+
+  .content
+    .title a
+      font-weight: normal
+      color: #444
+
+  .sub
+    margin-top: $main-margin
+    i
+      color: $icon-blue
+
+    a, span
+      font-size: 12px
+
+    span
+      color: $sub-gray
+
+    .list li:first-child
+      padding-left: 0
+
+.edit_issue,.new_issue
+  .btn.l + .input
+    float: left
+    margin-left: $layout-margin
+    margin-top: $main-margin-small

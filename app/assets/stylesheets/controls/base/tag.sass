@@ -1,0 +1,64 @@
+.tags
+  @include clearfix
+  margin-bottom: -$input-text-padding
+.tag
+  background: $lame
+  border-radius: $input-border-radius
+  padding: $tag-padding
+  color: $black
+  box-shadow: $tag-box-shadow
+  height: $tag-height
+  line-height: $main-margin
+  white-space: nowrap
+  margin: 0 $input-text-padding $input-text-padding 0
+  text-transform: lowercase
+  display: block
+  float: left
+  @include behavior
+  @include transition(background .1s ease-in-out)
+  span:first-child
+    @include inline-block
+    max-width: $layout-margin *3
+    text-overflow: ellipsis
+    overflow: hidden
+  &:hover
+    text-decoration: none
+    color: $black
+    background: $hover-tag-color
+    box-shadow: $tag-box-shadow
+  .num
+    margin-left: $main-margin/3
+    color: $sub-gray
+
+h3.tag
+  height: 2em
+  line-height: 1.2em
+  a
+    color: $black
+    &:hover
+      color: $dark-black
+
+.entity-tag
+  @include behavior
+  border-radius: $input-border-radius
+  border: $base-border
+  box-shadow: none
+  padding: 4*$border-width $main-margin/3*2 + 2 * $border-width
+  text-transform: lowercase
+  @include transition(background .3s)
+  &:hover
+    border: none
+    padding: 5*$border-width $main-margin/3*2 + 3*$border-width
+    background: $lame
+    box-shadow: 0 0 3px 2px white
+.entity-link
+  margin-left: $main-margin-small/2
+  a
+    color: $black!important
+    text-transform: lowercase
+    box-shadow: none
+    border-bottom: $border-width dashed rgba($black, .5)
+    &:hover
+      color: $dark-black!important
+      box-shadow: none
+      border-bottom-color: $black

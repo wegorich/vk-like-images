@@ -1,0 +1,58 @@
+.solutions
+  .pagination
+    margin-top: $main-margin!important
+
+  #issue_solutions_index
+    margin-top: $main-margin
+    > *
+      margin-bottom: $input-text-padding
+      > .solution
+        background: white
+        border-left-color: $orange
+        padding-bottom: $border-width
+
+      &:last-child
+        margin-bottom: 0
+
+    .issue_comments > .comment
+      margin-top: $main-margin
+      .add_new_comment
+        margin-top: $main-margin
+
+    .issue_comments
+      position: relative
+      @include behavior
+      &:before
+        content: ' '
+        display: block
+        height: 2 * $border-width
+        margin-right: $main-margin
+        margin-top: $main-margin + 2 * $border-width
+        margin-left: $layout-margin + $main-padding - 2* $border-width
+      .comments-title
+        color: $dark-lame
+        padding-left: $layout-margin + $main-padding
+        position: relative
+        display: inline
+        &:after
+          position: absolute
+          left: 100%
+          margin-left: $main-margin-small
+          width: 300%
+          display: block
+          content: ''
+          border-bottom: $base-border
+          height: 2 * $border-width
+          box-shadow: 0 ($border-width) 0 white
+          top: 50%
+          margin-top: -3*$border-width
+.control-panel
+  &:not(.hide)+ .pagination
+    margin-top: $modal-padding!important
+
+.textselection
+  display: block
+  position: absolute
+  background: yellow
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size: 13px
