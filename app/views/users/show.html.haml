@@ -4,6 +4,6 @@
   %b Username:
   = @user.username
 
+= render partial: 'albums/block/item', collection: @user.albums, as: :item
+
 = link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path

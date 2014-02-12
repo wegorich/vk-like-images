@@ -36,6 +36,7 @@ gem 'kaminari'
 
 gem 'fancybox2-rails', '~> 0.2.4'
 gem 'russian'
+gem 'rabl'
 
 #styles
 gem 'autoprefixer-rails'

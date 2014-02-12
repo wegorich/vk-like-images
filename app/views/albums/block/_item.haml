@@ -1,0 +1,4 @@
+.album-item
+  - if item.assets.any?
+    = image_tag item.assets.first.url(:thumb)
+  %h1= link_to item.name, album_path(item)

@@ -1,0 +1,4 @@
+= simple_form_for @album, url: albums_path(@album) do |f|
+  = f.input :name
+  = f.hidden_field :user_id, value: current_user.id
+  = f.submit 'Save', class: 'btn'

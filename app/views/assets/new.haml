@@ -1,0 +1,12 @@
+%section.assets_holder
+  .upload_area
+    - if parent
+      - resource_for_form = [parent, resource]
+    - if parent.assets.any?
+      %div.previous_assets{data: {assets: parent.assets.to_json}}
+    - else
+      - resource_for_form = resource
+    = form_for resource_for_form do |f|
+      = f.file_field :attachment
+      = f.submit 'Загрузить...'
+  .all_assets

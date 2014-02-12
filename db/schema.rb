@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140212104249) do
+ActiveRecord::Schema.define(:version => 20140212113134) do
+
+  create_table "assets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.integer  "assetable_id"
+    t.string   "assetable_type"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "assets", ["assetable_id", "assetable_type"], :name => "index_assets_on_assetable_id_and_assetable_type"
+  add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
+
+  create_table "user_albums", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_albums", ["user_id"], :name => "index_user_albums_on_user_id"
 
   create_table "user_authorizations", :force => true do |t|
     t.string   "provider"

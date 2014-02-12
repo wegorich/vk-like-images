@@ -15,35 +15,12 @@
     %section.search
       - if user_signed_in?
         %ul.list.inline
-          %li= link_to 'Все', root_url
-          %li= link_to 'Мое', '#'
+          %li= link_to 'Все', albums_path
+          %li= link_to 'Мое', @current_user
       - else
         %h1 Загрузи картинку спаси мир
     %ul.list.inline.session><
       - if user_signed_in?
-        %li.dropdown.notify
-          = link_to '#', class:'dropdown-toggle', data:{toggle:'dropdown', target:'#'} do
-            %span
-              %i.icon-bell
-              .num= 10
-          %ul.dropdown-menu
-            %li
-
-              %div.dropdown-menu.dropdown-container.scrollbar
-                %ul.notifications-list
-                  -#- notifications(current_user).each do |f|
-                  -#  %li{class: f.new? ? 'active' : ''}
-                  -#    -#= render partial: 'users/notification/shared/mustache_small_item', locals: { notification: f }
-                  -#    = render partial: 'users/notification/shared/small_item', locals: { noty: f }
-
-            %li
-              .footer
-                = link_to 'Все уведомления', user_path(current_user,{notify: 'all'})
-                =# link_to user_path(current_user,{notify: 'setting'}), class: 'r' do
-                =#  %i.icon-cog
-                =#  Настроить уведомления
-          -#= subscribe_to "/users/#{current_user.id}/notifications"
-
         %li.dropdown.user
           = link_to edit_user_registration_path , class:'dropdown-toggle', data:{toggle:'dropdown', target:'#'} do
             %span= current_user.username
