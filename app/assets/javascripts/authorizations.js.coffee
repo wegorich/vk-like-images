@@ -13,8 +13,6 @@ $ ->
              $.fancybox(data, {
               wrapCSS: 'modal'
               closeBtn : false
-              afterShow:()->
-                 $('.modal [placeholder]').placeholder()
               overlay :
                 locked : true
 
@@ -41,8 +39,6 @@ $ ->
         $.fancybox(data, {
           wrapCSS: 'modal'
           closeBtn : false
-          afterShow:()->
-            $('.modal [placeholder]').placeholder()
           overlay :
             locked : true
 

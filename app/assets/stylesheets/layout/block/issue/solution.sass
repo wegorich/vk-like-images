@@ -1,11 +1,47 @@
-#single-solution
-  .solution, #issue_solutions_index
-    margin: 0!important
-.solutions
-  #filter-count
-    margin-bottom: $modal-padding
-    color: $dark-black
-.solution > .body, .full-show-body, form[data-role='assetable']
+.redactor-sub
+  position: relative
+
+  border-top: 1px dashed $border-color
+  .gallery-control
+    margin-top: - $border-width
+    padding: $input-text-padding $main-padding
+    bottom: 100%
+    background: #ffffff
+    @include border($border-color)
+    border-top: 0
+    + .input-btn
+      margin-top: -1px
+    .add-item
+      cursor: pointer
+      @include inline-block
+      @include border($border-color, 2)
+      border-radius: $main-margin-small/2
+      border-style: dashed
+      color: $border-color
+      width: $layout-margin*3 + $main-margin-big
+      text-align: center
+      font-size: .9em
+      .text
+        display: table
+        height: 100%
+        span
+          display: table-cell
+          vertical-align: middle
+          line-height: 1.3
+      &:before
+        content: ''!important
+      &:hover
+        border-color: $gallery-border
+    .info
+      background: $gray
+      @include inline-block
+      @include border()
+      line-height: $modal-padding
+      height: $modal-padding
+      padding: 0 $input-text-padding
+      margin-bottom: $input-text-padding
+
+form[data-role='assetable']
   .gallery
     margin-top: $main-margin
     > *
@@ -40,205 +76,22 @@
       &:last-child
         padding-right: 0
 
-form[data-role='assetable'] .gallery > *
-  overflow: visible
-  .content
-    width: 90%
-    height: 100%
-    overflow: hidden
-  &:before
-    content: ''!important
-  .delete
-    cursor: pointer
-    position: absolute
-    left: 90%
-    color: $sub-gray
-    font-size: $font-size
-    &:hover
-      color: $red
-
-.selected >
-  .solution
-    border-color: $orange
-    background: white!important
-    .solution-mark
-      padding-top: $main-margin!important
-
-.solution
-  border: $base-border
-  padding: 0 $main-padding 0 0!important
-  min-height: $main-padding*5
-  &:hover
-    @include transition(all 0.6s ease-in-out)
-    background: $solution-hover-bg
-
-  &.selected
-    border-color: $orange
-    background: white!important
-
-  & > .body
-    position: relative
-    margin-left: $layout-margin + $main-padding
-
-    &:before, &:after
-      display: block!important
-    > .text
-      color: $find-solution-title
-      p
-        padding: $main-margin-small 0
-        &:first-child
-          padding-top: 0
-        &:last-child
-          padding-bottom: 0
-    .list
-      margin: $input-text-padding 0 (-$main-margin-small/2)
-      > li
-        .update_solution
-          text-align: center
-          height: $input-height!important
-          line-height: $input-height!important
-        > a
-          margin: $main-margin-small/2 $main-margin/2 $main-margin-small/2 0
-          background: $dark-solution-gray
-          border-radius: $main-margin-small/2
-          color: $black
-          box-shadow: none
-          line-height: 21px
-          padding: 0 $input-text-padding
-          text-transform: lowercase
-          @include inline-block
-          &:hover, &.open
-            background: $hover-tag-color
-
-  .cancel
-    color: $solution-nav-links
-    margin-top: $modal-padding + 2* $border-width
-    line-height: 1
-    &:hover
-      color: $dark-black
-  .mark
-    position: absolute
-    width: 100%
-    bottom: 34px
-    .alternatives
-      margin-bottom: 0
-    .alter-item
-      padding-right: 0
-      margin-left: $modal-padding
-      @include border($tab-content-bg, 3)
-      .cr-item
-        width: 28%
-
-        margin-right: 4.8%
-        padding-right: 0
-        h4
-          font-size: 1.0em!important
-    .down
+form[data-role='assetable']
+  .hide
+    display: none!important
+  .gallery > *
+    overflow: visible
+    .content
+      width: 90%
+      height: 100%
+      overflow: hidden
+    &:before
+      content: ''!important
+    .delete
       cursor: pointer
       position: absolute
-      right: $input-text-padding
-      top: $main-padding
-      color: $solution-mark-close
-      font-size: 1.7em
-      z-index: 10
+      left: 90%
+      color: $sub-gray
+      font-size: $font-size
       &:hover
         color: $red
-    &.open + .solution-mark
-      .btn-mark
-        color: $a-dark-blue
-        box-shadow: $link-hover-box-shadow
-        position: relative
-        &:before, &:after
-          position: absolute
-          left: 50%
-          content: ' '
-        &:before
-          top: - $main-padding + 3*$border-width
-          margin-left: - ($main-padding + 2*$border-width)/2
-          @include triangle($main-padding + 2*$border-width, $tab-content-bg, down)
-        &:after
-          top: - $main-padding + $border-width
-          margin-left: - $main-margin*1.5/2
-          @include triangle($main-margin*1.5, white, down)
-  .solution-mark
-    margin-top: 0!important
-    margin-right: $main-margin
-
-    > *
-      &.hide + *
-        margin-left: 0
-
-      margin-left: $main-margin
-      &:first-child
-        margin-left: 0
-
-    .btn-comments-toggle
-      color: $solution-nav-links
-      &:hover
-        color: $dark-black
-    + .comment
-      display: none
-    &.hide
-      display: block!important
-      .btn-comment
-        color: $a-dark-blue
-        box-shadow: 0 2px 0 -1px
-
-      + .comment
-        display: block
-  & > .heading
-    $height:$layout-margin + $main-margin/2 + 2 * $border-width
-    height: $height
-    line-height: $height
-    a.time
-      color: $a-blue
-    img
-      height: $height
-      width: $height
-    .rate
-      line-height: $main-padding
-      margin: ($height - $main-padding)/2 0
-
-  .comment
-    padding: 0
-    border-left: 0
-    margin-left: $layout-margin + $main-padding
-    &.nav_to
-      a
-        color: $black
-        &:hover
-          color: $dark-black
-
-    .heading
-      margin-bottom: $main-padding
-    .body
-      background: lighten($tab-content-bg,3)
-      padding: $main-margin-small $main-margin
-      position: relative
-      color: $find-solution-title
-      &:after
-        position: absolute
-        content: ''
-        bottom: 100%
-        left: $modal-padding/2
-      &:after
-        @include triangle($input-text-padding,lighten($tab-content-bg, 3), down-left)
-
-    & > .heading
-      & > .rate
-        color: transparent
-    .add_new_comment
-      font-size: $font-size
-  .comments
-    overflow: hidden
-    > *
-      display: none
-      &:last-child
-        display: block
-
-    &.open
-      > *
-        display: block
-
-form[data-role='assetable'] .gallery
-  margin-top: 0

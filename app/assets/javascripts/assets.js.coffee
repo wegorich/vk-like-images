@@ -12,26 +12,6 @@ jQuery ->
     $(this).parent().hide(300);
     event.preventDefault()
 
-  $(".scrollbar, .dropdown-toggle + .dropdown-menu").mCustomScrollbar({
-    advanced:
-      updateOnContentResize: true
-
-    scrollInertia: 150
-  });
-
-  $(document).tooltip({
-    show: {
-      delay: 300
-    },
-    position:
-      my: "center top+20",
-      at: "center bottom"
-      using: (position, feedback) ->
-        $(this).css(position)
-               .addClass("arrow")
-               .addClass(feedback.vertical)
-               .addClass(feedback.horizontal)
-  });
   if helpers.isFireFox()
     $('input[type="checkbox"] + label').each(()->
       if $(this).prev().is(':checked')

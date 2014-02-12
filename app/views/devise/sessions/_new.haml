@@ -13,11 +13,11 @@
     = render 'devise/shared/list'
 
   .block
-    = simple_form_for reg_resource, as: reg_resource_name, url: session_path(reg_resource_name), validate: true do |f|
+    = simple_form_for reg_resource, as: reg_resource_name, url: session_path(reg_resource_name) do |f|
       %p
         или с паролем
       %section
-        = f.input :login, label: false, autofocus: true, placeholder: 'Ваш Email или username'
+        = f.input :email, label: false, autofocus: true, placeholder: 'Ваш Email или username'
 
         .attach-group
           = f.input :password, label: false, placeholder: 'Ваш пароль'

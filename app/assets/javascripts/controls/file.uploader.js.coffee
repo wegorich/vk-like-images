@@ -13,7 +13,7 @@ $ ->
         a = assetable
         # append file picker
         a.form.after(["<input id='", a.form_id, "_assets' class='fileinput-btn' type='file' name='asset[attachment]'",
-                 " data-url='", a.getUrl(), "' multiple>"].join(''))
+                      " data-url='", a.getUrl(), "' multiple>"].join(''))
         a.fileUploadInit()
         a.grapFromJson()
 
@@ -33,7 +33,7 @@ $ ->
 
           $.ajax(
             type: 'DELETE'
-            url: a.getUrl() + '/' + row.data('id')
+            url: a.getUrl() +  '/' + row.data('id')
             success: ()->
               onComplite()
             error: ()->
@@ -44,9 +44,9 @@ $ ->
       getUrl: ()->
         a = assetable
         url = if a.form_id.indexOf("new_") >= 0
-                "/assets"
-              else
-                a.form_action + "/assets"
+          "/assets"
+        else
+          a.form_action + "/assets"
         a.getUrl = ()->
           url
 
@@ -81,13 +81,13 @@ $ ->
       appendItem: (asset)->
         a = assetable
         $('.assets', a.$contaner).removeClass('no-padding')
-                            .append ["<li class='file-preview'><div class='asset-delete delete' data-id='",asset.id,"'>",
-                                   "<img alt='",asset.attachment_content_type,
-                                   "' src='", asset.thumb_url,"'>",
-                                   "<a><i class='icon-trash'></i></a>",
-                                   "<span>",
+        .append ["<li class='file-preview'><div class='asset-delete delete' data-id='",asset.id,"'>",
+                 "<img alt='",asset.attachment_content_type,
+                 "' src='", asset.thumb_url,"'>",
+                 "<a><i class='icon-trash'></i></a>",
+                 "<span>",
 
-                                   asset.attachment_file_name, "</span></div></li>"].join('')
+                 asset.attachment_file_name, "</span></div></li>"].join('')
         a.redrawDropzone()
       setAssets: ()->
         a = assetable
@@ -174,7 +174,7 @@ $ ->
         url = if a.form_id.indexOf("new_") >= 0
           "/assets"
         else
-          '/' + a.form.data('resource') + a.form_action.split(a.form.data('resource'))[1] + "/assets"
+          '/' + a.form.data('resource') + a.form_action.split(a.form.data('resource'))[1].split('?')[0] + "/assets"
         a.getUrl = ()->
           url
 
@@ -198,10 +198,10 @@ $ ->
           a.form.removeClass('files')
 
 
-        if a.gallery.children().length > 5 || a.gallery.children().length == 1
-          a.gallery.find('.add-item').addClass('hide')
-        else
-          a.gallery.find('.add-item').removeClass('hide')
+        #        if a.gallery.children().length > 5 || a.gallery.children().length == 1
+        #          a.gallery.find('.add-item').addClass('hide')
+        #        else
+        #          a.gallery.find('.add-item').removeClass('hide')
 
         a.setAssets()
 
@@ -229,11 +229,11 @@ $ ->
             if !acceptFileTypes.test(data.originalFiles[0]['type'])
               console.log 'Not an accepted file type'
             else
-              if $(".assets", a.$container).children().length + data.originalFiles.length < 7
-                a.showLoading()
-                data.submit()
-              else
-                a.gallery.parent().find('.info').removeClass('hide')
+#              if $(".assets", a.$container).children().length + data.originalFiles.length < 7
+              a.showLoading()
+              data.submit()
+#              else
+#                a.gallery.parent().find('.info').removeClass('hide')
 
           done: (e, data) ->
             a.appendItem(data.result.asset)

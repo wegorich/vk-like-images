@@ -1,0 +1,9 @@
+.redactor-sub
+  .gallery-control
+    .info.hide
+      Вы можете загрузить фоточки
+
+    .assets.gallery.no-padding{data: {assets: (Rabl::Renderer.json( Asset.find(resource.asset_ids), 'assets/index') if resource.asset_ids.length > 0)  }}
+      .add-item
+        .text
+          %span Добавить фотографию

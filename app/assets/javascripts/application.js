@@ -15,7 +15,7 @@
 // require jquery-ui
 //= require rails.validations
 //= require rails.validations.simple_form
-
+//= require underscore
 //= require bootstrap/bootstrap-select
 //= require bootstrap/bootstrap-dropdown
 
