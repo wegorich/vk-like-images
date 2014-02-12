@@ -1,1 +1,1 @@
-#require 'hstorable'
+require 'extensions/hstorable'

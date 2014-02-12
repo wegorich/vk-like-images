@@ -1,5 +1,10 @@
 ImagesTest::Application.routes.draw do
+
   devise_for :users
+
+  match '/auth/:provider/callback' => 'authorizations#create'
+  resources :authorizations, only: [:index, :create, :destroy]
+  match '/auth/failure' => 'authorizations#auth_failure'
 
   resources :users
 
