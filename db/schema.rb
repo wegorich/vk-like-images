@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140212113134) do
+ActiveRecord::Schema.define(:version => 20140212143802) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20140212113134) do
     t.datetime "attachment_updated_at"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.integer  "position"
   end
 
   add_index "assets", ["assetable_id", "assetable_type"], :name => "index_assets_on_assetable_id_and_assetable_type"

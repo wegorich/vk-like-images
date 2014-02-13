@@ -1,6 +1,7 @@
 class Asset < ActiveRecord::Base
   belongs_to :user
   belongs_to :assetable, polymorphic: true
+  acts_as_list scope: :assetable
 
   delegate :url, to: :attachment
 

@@ -44,6 +44,7 @@ gem 'autoprefixer-rails'
 #urls
 gem 'friendly_id', '~> 4.0.10'
 
+gem 'acts_as_list'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
