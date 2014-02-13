@@ -15,7 +15,6 @@
     %section.search
       - if user_signed_in?
         %ul.list.inline
-          %li= link_to 'Все', albums_path
           %li= link_to 'Мое', @current_user
       - else
         %h1 Загрузи картинку спаси мир

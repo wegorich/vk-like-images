@@ -12,7 +12,7 @@ $ ->
     stop: (event, ui)->
       if ui.item.startPos != ui.item.index()
         $.ajax
-          url: "/albums/#{my.id}/update_config"
+          url: "/albums/update_config"
           method: 'POST'
           data:
             key: ui.item.data('id')

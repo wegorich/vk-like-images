@@ -1,6 +1,6 @@
 ImagesTest::Application.routes.draw do
 
-  resources :albums do
+  resources :albums, exept: :index do
     post 'update_config' => 'albums#update_config'
   end
 
@@ -11,7 +11,7 @@ ImagesTest::Application.routes.draw do
   resources :authorizations, only: [:index, :create, :destroy]
   match '/auth/failure' => 'authorizations#auth_failure'
 
-  resources :users
+  resources :users, only: [:show, :edit, :update]
 
   [:albums].each do |assetable|
     resources assetable do
@@ -21,5 +21,5 @@ ImagesTest::Application.routes.draw do
 
   resources :assets, as: :app_assets
 
-  root to: 'users#index'
+  root to: 'users#show'
 end

@@ -1,6 +1,6 @@
-%p#notice= notice
 %h1.page-title
   Ваши альбомы
 %table= render partial: 'albums/block/item', collection: @user.albums, as: :item
 
 = link_to 'Edit', edit_user_path(@user)
+= link_to 'Новый альбом', new_album_path
