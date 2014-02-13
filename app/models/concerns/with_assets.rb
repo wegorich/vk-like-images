@@ -1,7 +1,7 @@
 module WithAssets
   extend ActiveSupport::Concern
   included do
-    has_many :assets, as: :assetable, -> { order('position ASC') }
+    has_many :assets, order:'position ASC', as: :assetable
   end
 
   def asset_ids= ids

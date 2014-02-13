@@ -1,6 +1,8 @@
 ImagesTest::Application.routes.draw do
 
-  resources :albums
+  resources :albums do
+    post 'update_config' => 'albums#update_config'
+  end
 
   devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   devise_scope(:user) { match '/users/sign_up/success' => 'registrations#success' }

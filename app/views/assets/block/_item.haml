@@ -1,3 +1,5 @@
-.asset-item
-  = link_to item.url, class: 'fancybox', rel: 'asset' do
-    = image_tag item.url(:thumb)
+%tr.asset-item{data:{id: item.id}}
+  %td= item.id
+  %td
+    = link_to item.url, class: 'fancybox', rel: 'asset' do
+      = image_tag item.url(:thumb)

@@ -1,4 +1,4 @@
 %p#notice= notice
 %h1.page-title= @album.name
-= render partial: 'assets/block/item', collection: @album.assets, as: :item
 = link_to 'Edit', edit_album_path(@album)
+%table{data:{id: @album.id}}= render partial: 'assets/block/item', collection: @album.assets, as: :item
